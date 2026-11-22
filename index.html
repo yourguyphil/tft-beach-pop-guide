@@ -1,0 +1,1774 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Beach Pop Fast 8 Guide · TFT Set 19</title>
+<meta name="description" content="Play Beach Pop every game: a visual fast 8 playbook for TFT Set 19 Prismatic Tour. Graves for AD items, Syndra then Taliyah for AP, Zac tank, no rerolling.">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16.png">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0b0f17">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Beach Pop">
+<meta property="og:title" content="Beach Pop Fast 8 Guide">
+<meta property="og:image" content="assets/icons/icon-512.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0f17; --bg2:#111827; --panel:#151d2b; --panel2:#1b2536; --line:#26324a;
+  --text:#e6ecf5; --muted:#93a1b8; --dim:#64738c;
+  --teal:#3ff0c8; --teal2:#0fae8f; --tealbg:rgba(63,240,200,.11);
+  --red:#ff8a5b; --red2:#e0603a; --redbg:rgba(255,138,91,.10);
+  --gold:#f5c451; --tank:#7aa2ff; --tankbg:rgba(122,162,255,.12);
+  --c1:#9aa4b2; --c2:#27c46b; --c3:#2f8cff; --c4:#c04bff; --c5:#ffb020; --c7:#ff4f6d;
+  --radius:16px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 Inter,system-ui,Segoe UI,Roboto,sans-serif;
+  background-image:radial-gradient(1200px 600px at 15% -10%,rgba(63,240,200,.13),transparent 60%),
+                   radial-gradient(1000px 600px at 95% 0%,rgba(255,138,91,.14),transparent 60%);}
+img{display:block;max-width:100%}
+a{color:var(--teal)}
+h1,h2,h3{font-family:Cinzel,Georgia,serif;letter-spacing:.02em;margin:0}
+h2{font-size:clamp(24px,3.2vw,34px)}
+h3{font-size:19px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+section{padding:56px 0 24px}
+.kicker{font:700 12px Inter;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.lead{color:var(--muted);max-width:760px;margin:10px 0 24px}
+.panel{background:linear-gradient(180deg,var(--panel),var(--bg2));border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+.grid{display:grid;gap:16px}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;padding:3px 9px;border-radius:999px;border:1px solid var(--line);background:var(--panel2);white-space:nowrap}
+.pill img{width:16px;height:16px}
+.p-teal{color:var(--teal);border-color:rgba(46,230,214,.4);background:var(--tealbg)}
+.unit .plans .pill{background:#0b0f17;font-size:12px;padding:3px 8px}
+.p-red{color:var(--red);border-color:rgba(255,90,60,.4);background:var(--redbg)}
+.p-tank{color:var(--tank);border-color:rgba(122,162,255,.4);background:var(--tankbg)}
+.p-gold{color:var(--gold);border-color:rgba(245,196,81,.4);background:rgba(245,196,81,.08)}
+.muted{color:var(--muted)} .dim{color:var(--dim)}
+.small{font-size:13px}
+
+/* nav */
+nav.top{position:sticky;top:0;z-index:50;background:rgba(11,15,23,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav.top .wrap{display:flex;align-items:center;gap:18px;height:56px;overflow-x:auto}
+nav.top .brand{display:flex;align-items:center;gap:8px;font:800 15px Cinzel;color:var(--text);text-decoration:none;white-space:nowrap}
+nav.top .brand img{width:26px;height:26px}
+nav.top .wrap>*{flex-shrink:0}
+nav.top .brand img{max-width:none}
+nav.top a.l{color:var(--muted);text-decoration:none;font-weight:600;font-size:13px;white-space:nowrap}
+nav.top a.l:hover{color:var(--text)}
+
+/* hero */
+.hero{padding:56px 20px 20px;position:relative}
+.hero h1{font-size:clamp(36px,6vw,68px);line-height:1.02;font-weight:800}
+.hero h1 .t{background:linear-gradient(90deg,var(--teal),#c6ff7a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero h1 .r{background:linear-gradient(90deg,var(--red),#ffc2e1);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .sub{font-size:18px;color:var(--muted);max-width:720px;margin:16px 0 26px}
+.hero-art{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap}
+.hero-art img{width:84px;height:84px;border-radius:14px;border:2px solid var(--line);object-fit:cover;transition:transform .2s}
+.hero-art img:hover{transform:translateY(-4px) scale(1.04)}
+
+/* fork */
+.fork{display:grid;grid-template-columns:1fr auto 1fr;gap:18px;align-items:stretch}
+.fork .q{align-self:center;text-align:center;padding:16px;border-radius:50%;width:150px;height:150px;display:flex;flex-direction:column;justify-content:center;align-items:center;
+  background:radial-gradient(circle,#1e2a3f,#0f1622);border:2px solid var(--line);box-shadow:0 0 40px rgba(46,230,214,.12),0 0 40px rgba(255,90,60,.12) inset}
+.fork .q b{font:800 15px Cinzel}
+.path{border-radius:var(--radius);padding:22px;position:relative;overflow:hidden;border:1px solid var(--line)}
+.path.teal{background:linear-gradient(160deg,rgba(46,230,214,.16),rgba(15,22,34,.95) 55%);border-color:rgba(46,230,214,.45)}
+.path.red{background:linear-gradient(200deg,rgba(255,90,60,.18),rgba(15,22,34,.95) 55%);border-color:rgba(255,90,60,.45)}
+.path .bgart{position:absolute;right:-30px;top:-30px;width:210px;height:210px;opacity:.20;border-radius:50%;object-fit:cover;filter:saturate(1.2)}
+.path h3{font-size:24px;margin-bottom:4px;position:relative}
+.path .if{font-weight:800;font-size:13px;letter-spacing:.12em;text-transform:uppercase;position:relative}
+.path.teal .if{color:var(--teal)} .path.red .if{color:var(--red)}
+.comps{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0;position:relative}
+.ic{width:44px;height:44px;border-radius:9px;border:1px solid rgba(255,255,255,.12);background:#0b111b}
+.ic.sm{width:30px;height:30px;border-radius:7px}
+.ic.xs{width:22px;height:22px;border-radius:5px}
+.path ul{margin:8px 0 0;padding-left:18px;position:relative} .path li{margin:4px 0}
+.rule{margin-top:16px;padding:14px 16px;border-radius:12px;background:var(--panel2);border:1px dashed var(--line);display:flex;gap:12px;align-items:flex-start}
+.rule .n{font:800 22px Cinzel;color:var(--gold);line-height:1}
+
+/* trait track */
+.track{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.bp{border-radius:14px;padding:16px;background:var(--panel2);border:1px solid var(--line);position:relative}
+.bp .num{font:800 34px Cinzel;color:var(--gold);line-height:1}
+.bp.hot{border-color:rgba(245,196,81,.6);box-shadow:0 0 0 1px rgba(245,196,81,.25),0 10px 30px rgba(245,196,81,.08)}
+.bp .tag{position:absolute;top:12px;right:12px}
+
+/* unit cards */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.fbtn{cursor:pointer;border:1px solid var(--line);background:var(--panel2);color:var(--muted);padding:7px 13px;border-radius:999px;font:600 13px Inter}
+.fbtn.on{color:var(--text);border-color:var(--teal);background:var(--tealbg)}
+.units{grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.unit{border-radius:var(--radius);overflow:hidden;background:var(--panel);border:1px solid var(--line);display:flex;flex-direction:column;transition:transform .15s,border-color .15s}
+.unit:hover{transform:translateY(-3px)}
+.unit .art{position:relative;aspect-ratio:16/10;overflow:hidden}
+.unit .art img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.unit .art::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(11,15,23,.95))}
+.unit .cost{position:absolute;top:10px;left:10px;z-index:2;font:800 13px Inter;padding:3px 9px;border-radius:8px;color:#0b0f17}
+.unit .nm{position:absolute;left:14px;bottom:10px;z-index:2;font:800 22px Cinzel;text-shadow:0 2px 10px #000}
+.unit .plans{position:absolute;top:10px;right:10px;z-index:2;display:flex;gap:5px}
+.unit .body{padding:12px 14px 14px;display:flex;flex-direction:column;gap:8px;flex:1}
+.traits{display:flex;gap:6px;flex-wrap:wrap}
+.buff{font-size:13px;padding:8px 10px;border-radius:10px;background:var(--panel2);border-left:4px solid var(--gold)}
+.buff b{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.role{font-size:13px;color:var(--muted)}
+.unit .items{display:flex;gap:6px;align-items:center;margin-top:auto;padding-top:4px}
+.k1{border-color:var(--c1)} .k2{border-color:var(--c2)} .k3{border-color:var(--c3)} .k4{border-color:var(--c4)} .k5{border-color:var(--c5)}
+.b1{background:var(--c1)} .b2{background:var(--c2)} .b3{background:var(--c3)} .b4{background:var(--c4)} .b5{background:var(--c5)}
+
+/* plans */
+.plan-head{display:flex;gap:18px;align-items:center;flex-wrap:wrap;margin-bottom:18px}
+.plan-head .big{width:96px;height:96px;border-radius:20px;object-fit:cover;border:3px solid}
+.plan.teal .big{border-color:var(--teal)} .plan.red .big{border-color:var(--red)}
+.plan.teal h2{color:var(--teal)} .plan.red h2{color:var(--red)}
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0}
+.stage{background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:14px;position:relative}
+.stage .st{font:800 12px Inter;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.stage h4{margin:4px 0 8px;font:700 16px Inter}
+.stage ul{margin:0;padding-left:18px;font-size:14.5px;color:#dbe3ef} .stage li{margin:8px 0}
+.stage .row{display:flex;gap:5px;flex-wrap:wrap;margin-top:10px}
+.plan.teal .stage{border-top:3px solid var(--teal)} .plan.red .stage{border-top:3px solid var(--red)}
+
+.two{display:grid;grid-template-columns:1.15fr 1fr;gap:18px}
+.carry{display:flex;gap:14px;align-items:center;padding:12px;border-radius:14px;background:var(--panel2);border:1px solid var(--line);margin-bottom:10px}
+.carry .por{width:64px;height:64px;border-radius:12px;object-fit:cover;border:2px solid}
+.carry .who{min-width:110px}
+.carry .who b{display:block;font:800 16px Cinzel}
+.recipes{display:flex;gap:10px;flex-wrap:wrap}
+.rec{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:11px;color:var(--muted);text-align:center;width:72px}
+.rec .eq{display:flex;align-items:center;gap:2px}
+.rec .eq span{font-weight:800;color:var(--dim);font-size:11px}
+.rec > img.ic{width:46px;height:46px}
+.rec .eq .ic{width:22px;height:22px;border-radius:5px}
+.alt{font-size:13px;color:var(--muted);margin-top:4px}
+.bkrec{position:relative;padding:12px 6px 4px;border:1px dashed var(--line);border-radius:10px;opacity:.85}
+.bkrec .bkl{position:absolute;top:-8px;left:50%;transform:translateX(-50%);padding:0 6px;background:var(--panel2);font:800 9.5px Inter;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);white-space:nowrap}
+
+/* hex board */
+.board{display:flex;flex-direction:column;gap:0;padding:14px 6px 10px;overflow:hidden;background:radial-gradient(ellipse at top,#1a2538,#0e1520);border-radius:14px;border:1px solid var(--line)}
+.board .lbl{font:700 11px Inter;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);text-align:center;margin:0 0 20px}
+.hrow{display:flex;justify-content:center;gap:6px;margin-top:-10px}
+.hrow:first-of-type{margin-top:0}
+.hrow{padding-right:31px}.hrow.odd{padding-right:0;padding-left:31px}
+.hex{width:56px;height:64px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);background:#1d2940;position:relative;display:flex;align-items:center;justify-content:center}
+.hex.u{background:var(--c1)}
+.hex.u img{width:52px;height:60px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);object-fit:cover}
+.cell{position:relative;width:56px}
+.hex.inst{background:linear-gradient(160deg,#ffe29a,#ffb86b);}
+.hex.inst img{width:30px;height:30px;clip-path:none;border-radius:8px;object-fit:cover}
+.emp{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:8px}
+.emp .uic{width:26px;height:26px}
+.track.t3{grid-template-columns:repeat(3,1fr)}
+@media (max-width:640px){.track.t3{grid-template-columns:1fr}}
+.instRef{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+.instRef>div{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.instRef b.n{font:800 22px Inter;color:var(--gold);margin-right:6px}
+@media (max-width:640px){.instRef{grid-template-columns:1fr}}
+.cell .stars{position:absolute;top:-6px;left:50%;transform:translateX(-50%);color:var(--gold);font-size:11px;letter-spacing:-1px;text-shadow:0 1px 3px #000;z-index:3;white-space:nowrap}
+.cell .its{position:absolute;bottom:-4px;left:50%;transform:translateX(-50%);display:flex;gap:1px;z-index:3}
+.cell .its img{width:15px;height:15px;border-radius:3px;border:1px solid #000}
+.cell .tip{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);background:#000;padding:3px 7px;border-radius:6px;font-size:11px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .15s;z-index:9}
+.cell:hover .tip{opacity:1}
+.board{position:relative}
+.legend{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;font-size:12px;color:var(--muted);justify-content:center}
+
+/* item grid */
+.igrid{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:6px;max-width:820px}
+.igrid .h,.igrid .c{display:flex;align-items:center;justify-content:center;border-radius:10px;aspect-ratio:1;position:relative}
+.igrid .h{background:var(--panel2);border:1px solid var(--line);cursor:pointer}
+.igrid .h.on{border-color:var(--gold);box-shadow:0 0 0 2px rgba(245,196,81,.35)}
+.igrid .h img{width:72%;height:72%;border-radius:8px}
+.igrid .c{background:#0f1622;border:1px solid var(--line);transition:opacity .15s,transform .15s}
+.igrid .c img{width:86%;height:86%;border-radius:8px}
+.igrid .c.dim{opacity:.13}
+.igrid .c.P{border-color:rgba(46,230,214,.75);box-shadow:inset 0 0 0 1px rgba(46,230,214,.35)}
+.igrid .c.B{border-color:rgba(255,90,60,.75);box-shadow:inset 0 0 0 1px rgba(255,90,60,.35)}
+.igrid .c.T{border-color:rgba(122,162,255,.75)}
+.igrid .c.PB{border-image:linear-gradient(135deg,var(--teal),var(--red)) 1}
+.igrid .c:hover{transform:scale(1.08);z-index:4}
+.igrid .c .dot{position:absolute;top:3px;right:3px;width:8px;height:8px;border-radius:50%}
+.iinfo{min-height:120px}
+.ilayout{display:grid;grid-template-columns:minmax(0,820px) 1fr;gap:20px;align-items:start}
+
+/* advisor */
+.adv{display:grid;grid-template-columns:1fr 1.1fr;gap:18px}
+.bench{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.cbtn{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:10px 6px;display:flex;flex-direction:column;align-items:center;gap:6px;user-select:none}
+.cbtn img{width:46px;height:46px;border-radius:9px}
+.cbtn .ctl{display:flex;align-items:center;gap:8px}
+.cbtn button{width:26px;height:26px;border-radius:8px;border:1px solid var(--line);background:#0f1622;color:var(--text);font:700 15px Inter;cursor:pointer}
+.cbtn .cnt{font:800 16px Inter;min-width:14px;text-align:center}
+.cbtn.has{border-color:var(--gold)}
+.cbtn .nm{font-size:11px;color:var(--muted);text-align:center;line-height:1.2}
+.build{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:10px;background:#0f1622;border:1px solid var(--line);margin-bottom:6px;font-size:13.5px}
+.build .eq{display:flex;align-items:center;gap:3px;color:var(--dim);font-weight:800}
+.build .who{margin-left:auto}
+.left{margin-bottom:10px}
+.left .lh{display:flex;align-items:center;gap:8px;margin-bottom:5px;font-size:13.5px}
+.build.opt{margin-left:18px;padding:6px 10px}
+.left .hmenu{margin-left:18px}
+.build .hx{flex:none;width:26px;height:26px;margin-left:2px;border-radius:8px;border:1px solid var(--line);background:var(--panel2);color:var(--muted);font:700 12px Inter;cursor:pointer}
+.build .hx:hover{color:var(--text);border-color:var(--red)}
+.hmenu{display:flex;flex-wrap:wrap;gap:6px;margin:-2px 0 8px;padding:8px;border-radius:10px;background:var(--panel2);border:1px dashed var(--line)}
+.hmenu button{flex:1 1 auto;padding:7px 10px;border-radius:8px;border:1px solid var(--line);background:#0f1622;color:var(--text);font:600 12.5px Inter;cursor:pointer}
+.hmenu button:hover{border-color:var(--gold)}
+.hbar{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:12px;padding-top:10px;border-top:1px dashed var(--line)}
+.hchip{padding:4px 9px;border-radius:999px;border:1px solid var(--line);background:var(--panel2);color:var(--muted);font:600 12px Inter;cursor:pointer}
+.hchip span{opacity:.6;margin-left:3px}.hchip:hover{color:var(--text)}.hchip.auto{cursor:default}.hchip.clr{color:var(--gold);border-color:var(--gold)}
+@media (max-width:600px){.build .who .nm{display:none}.build.opt,.left .hmenu{margin-left:8px}}
+.build .need{display:inline-flex;align-items:center;gap:5px;padding:2px 8px 2px 3px;border-radius:999px;border:1px dashed var(--gold);color:var(--gold);font-size:12.5px}
+[data-item],[data-comp]{cursor:help}
+.itip{position:fixed;z-index:300;max-width:290px;padding:12px 13px;border-radius:12px;background:#0d1420;border:1px solid var(--gold);box-shadow:0 10px 30px rgba(0,0,0,.6);font-size:13px;line-height:1.45;pointer-events:none;opacity:0;transform:translateY(4px);transition:opacity .12s,transform .12s}
+.itip.on{opacity:1;transform:none}
+.itip .th{display:flex;align-items:center;gap:10px;margin-bottom:7px}
+.itip .th img{width:40px;height:40px;border-radius:9px;border:1px solid rgba(255,255,255,.15)}
+.itip .th b{font-size:14.5px;display:block}
+.itip .rc{display:flex;align-items:center;gap:5px;color:var(--muted);font-size:12px}
+.itip .rc img{width:18px;height:18px;border-radius:4px}
+.itip .who{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;align-items:center;color:var(--muted);font-size:12px}
+.itip .who img{width:22px;height:22px;border-radius:6px;border:2px solid}
+.itip .bi{display:flex;align-items:center;gap:6px;margin-top:5px}
+.itip .bi img{width:22px;height:22px;border-radius:5px}
+
+.btnrow{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.btn{cursor:pointer;border:1px solid var(--line);background:var(--panel2);color:var(--text);padding:9px 14px;border-radius:10px;font:700 13px Inter}
+.btn.pri{background:linear-gradient(90deg,var(--teal2),#0b7c88);border-color:transparent}
+
+/* misc */
+.callout{display:flex;gap:12px;padding:14px 16px;border-radius:12px;background:rgba(245,196,81,.07);border:1px solid rgba(245,196,81,.35);margin:14px 0}
+.callout .i{font-size:20px}
+.aug{display:flex;flex-wrap:wrap;gap:8px}
+footer{border-top:1px solid var(--line);margin-top:50px;padding:28px 0 50px;color:var(--dim);font-size:12.5px}
+footer a{color:var(--muted)}
+/* simple layout */
+.choose{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px}
+.choice.main{box-shadow:0 0 0 1px rgba(63,240,200,.3),0 14px 40px rgba(63,240,200,.12)}
+.choice.red.main{box-shadow:0 0 0 1px rgba(255,138,91,.35),0 14px 40px rgba(255,138,91,.14)}
+
+.choice{display:flex;align-items:center;gap:18px;padding:18px 22px;border-radius:20px;text-decoration:none;color:var(--text);border:2px solid var(--line);transition:transform .15s}
+.choice:hover{transform:translateY(-3px)}
+.choice.teal{background:linear-gradient(120deg,rgba(63,240,200,.18),rgba(15,22,34,.9) 70%);border-color:rgba(63,240,200,.55)}
+.choice.red{background:linear-gradient(120deg,rgba(255,138,91,.18),rgba(15,22,34,.9) 70%);border-color:rgba(255,138,91,.55)}
+.choice .trig{display:grid;grid-template-columns:repeat(2,auto);gap:4px}
+.choice .trig .ic{width:34px;height:34px}
+.choice .trig .ic.big{width:72px;height:72px;border-radius:14px}
+.choice .ar{font:800 30px Inter;color:var(--dim)}
+.choice .por{width:110px;height:110px;border-radius:18px;object-fit:cover;border:3px solid}
+.choice.teal .por{border-color:var(--teal)} .choice.red .por{border-color:var(--red)}
+.choice .if{font:800 12px Inter;letter-spacing:.16em;text-transform:uppercase}
+.choice.teal .if{color:var(--teal)} .choice.red .if{color:var(--red)}
+.choice .nm{font:800 30px Cinzel;line-height:1.1;margin:4px 0}
+.choice .sm{color:var(--muted);font-size:14px}
+ul.bul{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+ul.bul li{display:flex;align-items:center;gap:14px;font-size:16px;padding:14px 18px;background:var(--panel);border:1px solid var(--line);border-radius:14px}
+ul.bul li .ics{display:flex;gap:5px;flex-shrink:0}
+ul.bul li .ic{width:34px;height:34px}
+ul.bul.two-col{grid-template-columns:1fr 1fr}
+ul.bul.tight li{padding:10px 14px;font-size:14.5px}
+.uic{width:34px;height:34px;border-radius:8px;border:2px solid}
+.tag-n{font:800 22px Cinzel;color:var(--gold);min-width:34px;text-align:center}
+.unit .art img.shop{position:absolute;right:10px;bottom:10px;z-index:2;width:46px;height:46px;border-radius:10px;border:2px solid}
+@media (max-width:900px){.choose,ul.bul.two-col{grid-template-columns:1fr}.choice .por{width:84px;height:84px}}
+
+/* augments */
+.augs{columns:2;column-gap:16px}
+/* golden rules */
+.gr{display:inline-flex;align-items:center;gap:3px;margin-left:8px;padding:2px 8px;border-radius:999px;font:700 11px Inter;color:var(--gold);border:1px solid rgba(245,196,81,.4);background:rgba(245,196,81,.08);text-decoration:none;white-space:nowrap;vertical-align:1px}
+.gr:hover{background:rgba(245,196,81,.2)}
+h3 .gr{vertical-align:3px}
+.vids{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin:16px 0 22px}
+.vid{display:flex;gap:14px;align-items:center;padding:12px;border-radius:14px;background:var(--panel);border:1px solid var(--line);color:var(--text);text-decoration:none;transition:border-color .2s}
+.vid:hover{border-color:var(--gold)}
+.vid .th{position:relative;flex:none;width:128px;aspect-ratio:16/9;border-radius:10px;overflow:hidden}
+.vid .th img{width:100%;height:100%;object-fit:cover}
+.vid .th::after{content:"▶";position:absolute;inset:0;display:grid;place-items:center;font-size:22px;color:#fff;background:rgba(0,0,0,.25);text-shadow:0 2px 8px #000}
+.vid b{display:block;font:800 16px Inter}.vid .small{display:block;margin-top:3px}
+.grules{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.grules h3{font:800 17px Inter;margin:0 0 10px}
+.grules .em{font-size:24px;width:34px;text-align:center}
+.grules .here{display:block;font-size:13px;color:var(--teal);margin-top:3px}
+#golden li{scroll-margin-top:90px;transition:border-color .3s,box-shadow .3s}
+#golden li:target{border-color:var(--gold);box-shadow:0 0 0 2px rgba(245,196,81,.45)}
+@media (max-width:900px){.vids,.grules{grid-template-columns:1fr}.vid .th{width:110px}}
+/* do / why */
+.dw{border-radius:12px;background:var(--panel2);border:1px solid var(--line);padding:10px 12px;margin:8px 0}
+.dw .d{font-weight:700}.dw .w{color:var(--muted);font-size:13.5px;margin-top:4px}
+.dw .lb{display:inline-block;min-width:34px;margin-right:8px;font:800 10px Inter;letter-spacing:.12em;text-transform:uppercase;padding:2px 6px;border-radius:6px;text-align:center;vertical-align:1px}
+.dw .d .lb{background:var(--teal);color:#06231c}.dw .w .lb{background:var(--line);color:var(--muted)}
+.dw.big{padding:16px 18px;border-width:2px}.dw.big .d{font:800 19px/1.35 Inter}
+.dw.teal{border-color:rgba(63,240,200,.5);background:linear-gradient(160deg,var(--tealbg),var(--panel2) 60%)}
+.dw.gold{border-color:rgba(245,196,81,.6);background:linear-gradient(160deg,rgba(245,196,81,.1),var(--panel2) 60%)}.dw.gold .d .lb{background:var(--gold)}
+.dw.red{border-color:rgba(255,138,91,.55);background:linear-gradient(160deg,var(--redbg),var(--panel2) 60%)}.dw.red .d .lb{background:var(--red);color:#2a0620}
+.warn{font-size:13px;color:var(--gold);margin:6px 2px}
+/* forms */
+.form{display:grid;grid-template-columns:1fr 1fr;gap:10px 12px}
+.fld label,.fld .lb{display:block;font:700 11px Inter;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+.fld input,.fld select{width:100%;min-height:40px;background:var(--bg);color:var(--text);border:1px solid var(--line);border-radius:10px;padding:8px 10px;font:600 15px Inter}
+.fld input:focus,.fld select:focus{outline:2px solid var(--teal);outline-offset:1px}
+.full{grid-column:1/-1}
+.seg{display:flex;gap:4px;flex-wrap:wrap}
+.seg button{flex:1;min-height:40px;min-width:40px;cursor:pointer;border:1px solid var(--line);background:var(--panel2);color:var(--muted);border-radius:9px;font:700 12.5px Inter;padding:6px 8px}
+.seg button.on{color:var(--text);border-color:var(--teal);background:var(--tealbg)}
+.cp{display:flex;align-items:center;gap:10px;padding:6px 0;border-bottom:1px dashed var(--line)}.cp:last-child{border:0}
+.cp img{width:38px;height:38px;border-radius:9px;border:2px solid}
+.cpn{flex:1;display:flex;flex-direction:column;line-height:1.2}
+.stp{display:flex;align-items:center;gap:6px}.stp span{min-width:22px;text-align:center;font:800 17px Inter}
+.stp button{width:40px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--panel2);color:var(--text);font:800 18px Inter;cursor:pointer}
+.tgl{display:flex;gap:10px;align-items:center;font-weight:600;font-size:14px;cursor:pointer;min-height:40px}.tgl input{width:20px;height:20px;accent-color:var(--gold)}
+.btn.pri{background:var(--teal);color:#06231c;border-color:var(--teal);font-weight:800}
+/* unlock details + hype */
+.ux{display:grid;grid-template-columns:1fr 1fr;gap:2px 16px;margin-top:6px;font-size:13px;color:var(--muted)}
+.ux b{color:var(--text);font-weight:700}
+.hype{margin-top:18px}
+.hbarw{position:relative;height:14px;border-radius:999px;background:var(--bg);border:1px solid var(--line);overflow:hidden;margin:12px 0 8px}
+#hypeBar{--p:0%;position:absolute;inset:0 auto 0 0;width:var(--p);background:linear-gradient(90deg,var(--teal),var(--gold));transition:width .4s}
+.hypeRef{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:10px}
+/* checkpoints + recovery */
+.cps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.cpc{border-radius:14px;background:var(--panel2);border:1px solid var(--line);padding:12px 14px}
+.cph{display:flex;gap:10px;align-items:center;margin-bottom:6px}.cph .r{font:800 20px Cinzel;color:var(--gold)}
+.cpc ul,.mun{list-style:none;margin:0;padding:0}.cpc li,.mun li{display:flex;gap:8px;font-size:13.5px;margin:6px 0}
+.ci{flex:none;width:20px;text-align:center}
+.recov{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.rv1 .rvh{font-weight:800;margin-bottom:2px}
+/* board variants + traits */
+.pill.off{opacity:.55}
+.bvt{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+/* advisor extras */
+.miss{margin:10px 0 0;padding:0;list-style:none;counter-reset:m}.miss li{display:flex;gap:10px;align-items:center;margin:8px 0;counter-increment:m}
+.miss li::before{content:counter(m);font:800 14px Cinzel;color:var(--gold);width:14px}
+.miss .em{width:30px;text-align:center;font-size:20px}
+/* augments v2 */
+.augs2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.aug2{display:flex;gap:12px;padding:12px;border-radius:14px;background:var(--panel2);border:1px solid var(--line)}
+.aug2>img{width:48px;height:48px;border-radius:10px;flex:none}
+.aug2 .hd{display:flex;flex-wrap:wrap;gap:6px;align-items:center}.aug2 .d{display:block;font-size:13px;color:var(--muted);margin:3px 0 6px}
+.aug2 .ya{display:flex;flex-direction:column;gap:2px;font-size:13px}
+.t-silver{color:#cfd6e2}.t-gold{color:var(--gold)}.t-prismatic{color:#e7a8ff}
+/* positioning */
+.mu{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;align-items:start}
+/* learn */
+details.lx{border:1px solid var(--line);border-radius:14px;background:var(--panel);margin:10px 0;padding:0 16px}
+details.lx>summary{cursor:pointer;list-style:none;padding:14px 0;font-weight:800;display:flex;gap:10px;align-items:center;min-height:44px}
+details.lx>summary::-webkit-details-marker{display:none}
+details.lx>summary::after{content:"▾";margin-left:auto;color:var(--muted);transition:transform .2s}details.lx[open]>summary::after{transform:rotate(180deg)}
+details.lx>summary .small{font-weight:500}
+details.lx .bd{padding:0 0 14px}
+.odds{border-collapse:collapse;font-size:14px;margin:6px 0}.odds th,.odds td{padding:5px 10px;text-align:center;border-bottom:1px solid var(--line)}
+.odds tr.hl td{background:rgba(63,240,200,.05)}.odds td.best{color:var(--teal);font-weight:800}
+/* tournament */
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}
+.fmt{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+/* match log */
+.logw{display:grid;grid-template-columns:minmax(300px,460px) 1fr;gap:18px;align-items:start}
+.lsts{display:flex;flex-direction:column;gap:6px}.lst{display:flex;gap:8px;align-items:center}.lst img{width:34px;height:34px;border-radius:8px;border:2px solid}.lst .seg{flex:1}
+.chips{display:flex;flex-wrap:wrap;gap:6px}.chips .hchip{min-height:34px}.hchip.on{border-color:var(--red);color:var(--red);background:var(--redbg)}
+details.fld>summary{cursor:pointer;font-weight:700;color:var(--muted);min-height:32px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.kpis div{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:10px;text-align:center}
+.kpis b{display:block;font:800 22px Cinzel;color:var(--gold)}.kpis span{font-size:12px;color:var(--muted)}
+.lrows{margin-top:10px}.lrow{display:flex;gap:10px;align-items:center;padding:6px 0;border-bottom:1px dashed var(--line);flex-wrap:wrap}
+.lrow .pl{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;font:800 14px Inter}.pl.pt{background:var(--tealbg);color:var(--teal)}.pl.pb{background:var(--redbg);color:var(--red)}
+.lrow .hx{margin-left:auto}
+#missChips,#muTabs,#bvTabs{flex-wrap:wrap!important}
+.seg[data-name="d-place"] button{min-width:0;padding:6px 2px}
+#menu .mh2{font:800 10px Inter;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);padding:8px 12px 2px}
+@media (max-width:900px){.logw,.mu,.vs{grid-template-columns:1fr}.cps{grid-template-columns:1fr 1fr}.recov,.augs2{grid-template-columns:1fr}.ux{grid-template-columns:1fr}}
+@media (max-width:560px){.mu .panel,.two .panel{padding:12px}.cps{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(2,1fr)}.dw.big .d{font-size:17px}}
+
+.ag{break-inside:avoid;margin-bottom:18px}
+.ag h3{font:800 15px Inter;margin:0 0 10px;display:flex;align-items:center;gap:8px}
+.ag ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.ag li{display:flex;align-items:center;gap:12px;padding:10px 12px;background:var(--panel2);border:1px solid var(--line);border-radius:12px}
+.ag li img{width:42px;height:42px;border-radius:10px;flex-shrink:0;background:#0b111b}
+.ag li .t{flex:1;min-width:0}
+.ag li b{display:block;font-size:14.5px}
+.ag li span.d{font-size:13px;color:var(--muted)}
+.ag li .tags{display:flex;gap:4px;flex-shrink:0}
+.ag li .pill{font-size:10.5px;padding:2px 7px}
+.ag.star li{border-color:rgba(245,196,81,.5);background:rgba(245,196,81,.07)}
+@media (max-width:900px){.augs{columns:1}}
+
+/* item ranking */
+.rankbar{display:flex;align-items:center;gap:10px;margin:0 0 12px;flex-wrap:wrap}
+.rankbar .seg{display:flex;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.rankbar .seg button{background:transparent;border:0;color:var(--muted);font:700 13px Inter;padding:7px 13px;cursor:pointer}
+.rankbar .seg button.on[data-r=A]{background:var(--tealbg);color:var(--teal)}
+.rankbar .seg button.on[data-r=B]{background:var(--redbg);color:var(--red)}
+.rankbar .seg button.on[data-r=all]{background:var(--panel2);color:var(--text)}
+.igrid .c.unranked{opacity:.32}
+.igrid .c .rk{position:absolute;top:-6px;left:-6px;z-index:3;min-width:22px;height:22px;padding:0 5px;border-radius:11px;background:#0b0f17;border:2px solid var(--muted);color:var(--text);font:800 11.5px/18px Inter;text-align:center;box-shadow:0 2px 6px rgba(0,0,0,.6)}
+.igrid .c .rk.star{background:var(--gold);border-color:#fff3c4;color:#1a1300;min-width:30px}
+.igrid .c.top{box-shadow:0 0 0 2px var(--gold),0 0 18px rgba(245,196,81,.35)!important;opacity:1}
+.ranklist{margin-top:14px}
+.ranklist h3{font:800 14px Inter;margin:0 0 8px;display:flex;align-items:center;gap:8px}
+.ranklist ol{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.ranklist li{display:flex;align-items:center;gap:8px;padding:6px 8px;border-radius:10px;background:var(--panel2);border:1px solid var(--line);font-size:13px;cursor:pointer}
+.ranklist li.star{border-color:rgba(245,196,81,.55);background:rgba(245,196,81,.07)}
+.ranklist li .n{font:800 13px Inter;min-width:26px;text-align:center;color:var(--muted)}
+.ranklist li.star .n{color:var(--gold)}
+.ranklist li img{width:26px;height:26px;border-radius:6px}
+.ranklist li .rcp{margin-left:auto;font-size:11.5px;color:var(--dim);white-space:nowrap}
+.ranklist li .who{width:22px;height:22px;border-radius:6px;border:2px solid}
+@media (max-width:700px){.igrid .c .rk{min-width:17px;height:17px;font-size:9.5px;line-height:13px;top:-4px;left:-4px;padding:0 3px}.igrid .c .rk.star{min-width:24px}}
+
+/* floating section menu */
+#fab{position:fixed;right:18px;bottom:calc(var(--dockH,46px) + 16px);z-index:80;width:58px;height:58px;border-radius:50%;border:0;cursor:pointer;
+  background:linear-gradient(135deg,#0fae8f,#d1259f);box-shadow:0 10px 30px rgba(0,0,0,.55),0 0 0 2px rgba(255,255,255,.08) inset;display:flex;align-items:center;justify-content:center;transition:transform .2s,bottom .2s}
+#fab:hover{transform:scale(1.06)}
+#fab span,#fab span::before,#fab span::after{display:block;width:24px;height:2.5px;border-radius:2px;background:#fff;position:relative;transition:transform .25s,background .2s}
+#fab span::before,#fab span::after{content:"";position:absolute;left:0}
+#fab span::before{top:-8px} #fab span::after{top:8px}
+body.menu-open #fab span{background:transparent}
+body.menu-open #fab span::before{transform:translateY(8px) rotate(45deg)}
+body.menu-open #fab span::after{transform:translateY(-8px) rotate(-45deg)}
+#menuBg{position:fixed;inset:0;z-index:70;background:rgba(5,8,13,.55);backdrop-filter:blur(3px);opacity:0;pointer-events:none;transition:opacity .2s}
+#menu{position:fixed;right:18px;bottom:88px;z-index:75;width:min(330px,calc(100vw - 36px));max-height:calc(100vh - 150px);max-height:calc(100dvh - 150px);overflow:auto;
+  background:rgba(17,24,39,.97);border:1px solid var(--line);border-radius:20px;padding:10px;box-shadow:0 20px 60px rgba(0,0,0,.6);
+  opacity:0;transform:translateY(12px) scale(.97);transform-origin:bottom right;pointer-events:none;transition:opacity .18s,transform .18s}
+body.menu-open #menuBg{opacity:1;pointer-events:auto}
+body.menu-open #menu{opacity:1;transform:none;pointer-events:auto}
+body.menu-open #fab{bottom:calc(16px + env(safe-area-inset-bottom))}
+#menu .mh{font:800 11px Inter;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);padding:6px 10px 8px}
+#menu a{display:flex;align-items:center;gap:12px;padding:9px 10px;border-radius:12px;color:var(--text);text-decoration:none;font-weight:600;font-size:15px}
+#menu a:hover,#menu a:focus-visible{background:var(--panel2);outline:none}
+#menu a.cur{background:var(--panel2);box-shadow:inset 3px 0 0 var(--gold)}
+#menu .mi{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:18px;background:#0b111b;border:2px solid var(--line);flex-shrink:0;overflow:hidden}
+#menu .mi img{width:100%;height:100%;object-fit:cover}
+#menu a small{margin-left:auto;color:var(--dim);font-size:11px;font-weight:700}
+#menu .sep{height:1px;background:var(--line);margin:6px 8px}
+#menu button.qrt{width:100%;display:flex;align-items:center;gap:12px;padding:9px 10px;border-radius:12px;border:0;background:transparent;color:var(--text);font:600 15px Inter;cursor:pointer;text-align:left}
+#menu button.qrt:hover{background:var(--panel2)}
+@media (max-width:700px){#fab{right:14px;width:54px;height:54px;bottom:calc(var(--dockH,46px) + 12px)}#menu{right:14px;bottom:calc(80px + env(safe-area-inset-bottom))}#menu a{padding:8px 10px}}
+@media print{#fab,#menu,#menuBg{display:none}}
+
+/* quick-ref dock */
+body{padding-bottom:var(--dockH,46px)}
+#qr{position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(10,14,22,.97);backdrop-filter:blur(10px);border-top:2px solid var(--line);box-shadow:0 -12px 40px rgba(0,0,0,.5)}
+#qr .bar{display:flex;align-items:center;gap:10px;padding:7px 16px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+#qr .bar b{font:800 14px Cinzel;letter-spacing:.04em;display:flex;align-items:center;gap:6px}
+#qr .bar b img{width:20px;height:20px}
+#qr .seg{display:flex;border:1px solid var(--line);border-radius:9px;overflow:hidden}
+#qr .seg .sh{display:none}
+@media (max-width:700px){#qr .seg .sh{display:inline}}
+#qr .seg button{background:transparent;border:0;color:var(--muted);font:700 12px Inter;padding:5px 11px;cursor:pointer}
+#qr .seg button.on[data-p=all]{background:var(--panel2);color:var(--text)}
+#qr .seg button.on[data-p=A]{background:var(--tealbg);color:var(--teal)}
+#qr .seg button.on[data-p=B]{background:var(--redbg);color:var(--red)}
+#qr .costs{display:flex;gap:4px;margin-left:auto;font:800 11px Inter;align-items:center}
+#qr .costs span{padding:2px 7px;border-radius:6px;color:#0b0f17}
+#qr .tog{background:var(--panel2);border:1px solid var(--line);color:var(--text);border-radius:8px;font:700 12px Inter;padding:5px 10px;cursor:pointer}
+#qr .body{display:grid;grid-template-columns:1.05fr 1.05fr 1.05fr .9fr;gap:12px;padding:10px 16px 12px;max-height:44vh;overflow:auto}
+#qr.closed .body{display:none}
+.qg{border-radius:12px;padding:8px 10px;background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--line);transition:opacity .2s}
+.qg.off{opacity:.25}
+.qg h5{margin:0 0 6px;font:800 11px Inter;letter-spacing:.14em;text-transform:uppercase}
+.qu{padding:6px 0;border-top:1px solid rgba(255,255,255,.06)}
+.qu:first-of-type{border-top:0}
+.qu .hd{display:flex;align-items:center;gap:8px;margin-bottom:3px}
+.qu .hd img{width:30px;height:30px;border-radius:7px;border:2px solid}
+.qu .hd .n{font:800 14px Inter}
+.cc{font:800 11px Inter;padding:1px 7px;border-radius:6px;color:#0b0f17}
+.qu .hd .why{font-size:11.5px;color:var(--dim);margin-left:auto;text-align:right}
+.ql{display:flex;align-items:center;gap:5px;font-size:12.5px;padding:2px 0 2px 2px;white-space:nowrap}
+.ql img{width:20px;height:20px;border-radius:4px}
+.ql .o{color:var(--dim);font-weight:800}
+.ql .res{font-weight:700}
+.ql.bk{opacity:.7}
+.ql.bk::before{content:"alt";font:800 9px Inter;color:var(--dim);text-transform:uppercase;width:18px}
+.qfill{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.qfill div{display:flex;align-items:center;gap:6px;font-size:12px}
+.qfill img{width:26px;height:26px;border-radius:6px;border:2px solid}
+.qfill .cc{font-size:10px;padding:0 5px}
+@media (max-width:1100px){#qr .body{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){#qr .body{grid-template-columns:1fr}#qr .costs{display:none}}
+@media (max-width:900px){
+  .fork{grid-template-columns:1fr}.fork .q{margin:0 auto;width:120px;height:120px}
+  .track,.timeline{grid-template-columns:1fr 1fr}
+  .two,.adv,.ilayout{grid-template-columns:1fr}
+}
+@media (max-width:520px){
+  .hrow{padding-right:21px}.hrow.odd{padding-left:21px}
+  .track,.timeline{grid-template-columns:1fr}
+  .bench{grid-template-columns:repeat(2,1fr)}
+  .hex,.cell{width:42px}.hex{height:48px}.hex.u img{width:38px;height:44px}
+}
+/* ---------- mobile ---------- */
+html,body{overflow-x:hidden;overflow-x:clip}
+.grid>*,.two>*,.adv>*,.ilayout>*,.fork>*,.choose>*,.track>*,.timeline>*{min-width:0}
+body{-webkit-tap-highlight-color:transparent}
+#qr{padding-bottom:env(safe-area-inset-bottom)}
+nav.top{padding-top:env(safe-area-inset-top)}
+@media (max-width:700px){
+  body{font-size:14.5px}
+  .wrap{padding:0 14px}
+  section{padding:34px 0 12px}
+  h2{font-size:24px}
+  nav.top .wrap{gap:14px;height:50px}
+  nav.top .brand span{display:none}
+  .hero{padding:26px 14px 6px}
+  .hero h1{font-size:36px}
+  .choose{gap:12px;margin-top:18px}
+  .choice{gap:10px;padding:12px 14px;border-radius:16px}
+  .choice .trig .ic{width:24px;height:24px}
+  .choice .trig .ic.big{width:44px;height:44px;border-radius:10px}
+  .choice .ar{font-size:18px}
+  .choice .por{width:68px;height:68px;border-radius:14px}
+  .choice .nm{font-size:22px}
+  .choice .sm{font-size:12.5px}
+  ul.bul{gap:8px}
+  ul.bul li{font-size:14px;padding:11px 12px;gap:10px;flex-wrap:wrap}
+  ul.bul li .ic,.uic{width:28px;height:28px}
+  .track{grid-template-columns:1fr 1fr;gap:8px}
+  .bp{padding:12px}.bp .num{font-size:26px}.bp h3{font-size:15px}
+  .timeline{grid-template-columns:1fr;gap:10px}
+  .plan-head .big{width:64px;height:64px;border-radius:14px}
+  .plan-head{gap:12px}
+  .panel{padding:14px}
+  .carry{gap:10px;padding:10px;align-items:flex-start}
+  .carry .por{width:44px;height:44px}
+  .rec{width:62px}.rec > img.ic{width:40px;height:40px}
+  /* units: compact 2-up */
+  .units{grid-template-columns:1fr 1fr;gap:10px}
+  .unit .art{aspect-ratio:1}
+  .unit .nm{font-size:16px;left:10px;bottom:8px}
+  .unit .art img.shop{width:30px;height:30px;right:6px;bottom:6px;border-radius:7px}
+  .unit .cost{font-size:11px;padding:2px 6px;top:6px;left:6px}
+  .unit .plans{top:6px;right:6px}
+  .unit .plans .pill{font-size:10px;padding:2px 6px}
+  .unit .body{padding:9px;gap:6px}
+  .unit .role{display:none}
+  .unit .traits .pill{font-size:10.5px;padding:2px 6px}
+  .buff{font-size:11.5px;padding:6px 8px}
+  .unit .items .ic{width:26px;height:26px}
+  .filters{flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px}
+  .fbtn{white-space:nowrap}
+  /* board */
+  .hex,.cell{width:40px}.hex{height:46px}.hex.u img{width:36px;height:42px}
+  .hrow{gap:4px;margin-top:-8px;padding-right:22px}.hrow.odd{padding-left:22px;padding-right:0}
+  .cell .its img{width:12px;height:12px}
+  /* items */
+  .igrid{gap:3px}.igrid .h,.igrid .c{border-radius:6px}
+  .iinfo{position:static}
+  .bench{grid-template-columns:repeat(4,1fr);gap:6px}
+  .cbtn{padding:8px 2px}.cbtn img{width:34px;height:34px}.cbtn .nm{display:none}
+  .cbtn button{width:24px;height:24px}
+  .cbtn .ctl{gap:4px}
+  /* quick-ref dock: swipeable groups */
+  #qr .bar{padding:6px 10px;gap:8px;flex-wrap:nowrap}
+  #qr .bar b span{display:none}
+  #qr .seg button{padding:5px 9px}
+  #qr .seg .lg{display:none}
+  #qr .tog{margin-left:auto}
+  #qr .body{display:flex;overflow-x:auto;overflow-y:auto;scroll-snap-type:x mandatory;gap:10px;padding:8px 10px 10px;max-height:31vh;-webkit-overflow-scrolling:touch}
+  .qg{flex:0 0 88%;scroll-snap-align:start;overflow-y:auto}
+  .ql{font-size:12px;gap:4px}
+  .ql img{width:18px;height:18px}
+  .qu .hd .why{font-size:10.5px}
+  #qr .dots{display:flex}
+}
+#qr .dots{display:none;justify-content:center;gap:5px;padding:0 0 6px}
+#qr .dots i{width:6px;height:6px;border-radius:50%;background:var(--line)}
+#qr .dots i.on{background:var(--text)}
+#qr.closed .dots{display:none!important}
+@media (display-mode:standalone){nav.top{padding-top:max(env(safe-area-inset-top),0px)}}
+@media print{nav.top,#advisor{display:none}body{background:#fff;color:#000}}
+
+/* ---------- Malzahar site additions ---------- */
+.b7{background:var(--c7)}
+.statrow{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:14px}
+.pbe{margin-top:16px;padding:10px 14px;border-radius:12px;background:rgba(245,196,81,.07);border:1px solid rgba(245,196,81,.35);font-size:14px;max-width:760px}
+.note-s{margin:4px 0 6px;padding:9px 13px;border-radius:10px;background:var(--panel2);border:1px dashed var(--line);font-size:13px;color:var(--muted)}
+.choice .por.wide{width:190px;height:110px;object-fit:cover;object-position:center 30%}
+.choice .trig.row{display:flex;gap:5px;margin-top:8px}
+.choice .trig.row .ic{width:34px;height:34px}
+.pill img.tr{width:14px;height:14px}
+img.tr{object-fit:contain}
+.uic.tr{background:#0b111b;padding:4px}
+.unit .art img{object-position:center 25%}
+#qr .bar b img.tr{width:18px;height:18px}
+#menu .mi img.tr{object-fit:contain}
+@media (max-width:700px){.choice .por.wide{width:110px;height:72px}.choice .trig.row .ic{width:26px;height:26px}}
+
+/* ---------- Hyperpop additions ---------- */
+ol.unlock{list-style:none;margin:14px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+ol.unlock li{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:14px;background:var(--panel);border:1px solid var(--line);font-size:14.5px}
+ol.unlock li .un{font:800 20px Cinzel;color:var(--gold);min-width:22px;text-align:center}
+ol.unlock li .uic{width:44px;height:44px;flex-shrink:0}
+#qr .body{grid-template-columns:1fr 1.15fr .95fr .9fr 1fr}
+.plan.red .stage{border-top-color:var(--red)}
+@media (max-width:900px){ol.unlock{grid-template-columns:1fr}}
+@media (max-width:1100px){#qr .body{grid-template-columns:1fr 1fr}}
+
+/* ---------------- motion ---------------- */
+html.still *,html.still *::before,html.still *::after{animation:none!important;transition:none!important}
+@media (prefers-reduced-motion: no-preference){
+  /* scroll reveal (JS tags .rv, then .in when visible) */
+  .rv{opacity:0;transform:translateY(18px) scale(.985)}
+  .rv.in{opacity:1;transform:none;transition:opacity .5s ease,transform .6s cubic-bezier(.2,.8,.2,1);transition-delay:var(--d,0ms)}
+
+  /* hero entrance */
+  .hero > *{animation:rise .7s cubic-bezier(.2,.8,.2,1) both}
+  .hero > :nth-child(2){animation-delay:.08s} .hero > :nth-child(3){animation-delay:.16s} .hero > :nth-child(4){animation-delay:.24s}
+  .statrow .pill{animation:pop .45s cubic-bezier(.3,1.6,.5,1) both}
+  .statrow .pill:nth-child(1){animation-delay:.25s}.statrow .pill:nth-child(2){animation-delay:.31s}.statrow .pill:nth-child(3){animation-delay:.37s}.statrow .pill:nth-child(4){animation-delay:.43s}.statrow .pill:nth-child(5){animation-delay:.49s}
+  .hero h1 .t,.hero h1 .r{background-size:200% 100%;animation:shimmer 7s ease-in-out infinite}
+  .hero h1 .t{background-image:linear-gradient(90deg,var(--teal),#c6ff7a,var(--teal))}
+  .hero h1 .r{background-image:linear-gradient(90deg,var(--red),#ffc2e1,var(--red));animation-delay:-3.5s}
+  .choice .por{animation:float 6s ease-in-out infinite}
+  .choice.red .por{animation-delay:-3s}
+  .choice .trig .ic{animation:pop .45s cubic-bezier(.3,1.6,.5,1) both}
+  .choice .trig .ic:nth-child(1){animation-delay:.45s}.choice .trig .ic:nth-child(2){animation-delay:.53s}.choice .trig .ic:nth-child(3){animation-delay:.61s}
+  .choice{transition:transform .25s cubic-bezier(.3,1.5,.5,1),box-shadow .25s}
+  .choice:hover{transform:translateY(-4px) rotate(-.4deg)}
+  .choice.teal:hover{box-shadow:0 14px 40px rgba(63,240,200,.22)} .choice.red:hover{box-shadow:0 14px 40px rgba(255,138,91,.22)}
+  .choice:hover .trig .ic{animation:wiggle .5s ease both}
+
+  /* icons feel tactile */
+  [data-item],[data-comp]{transition:transform .18s cubic-bezier(.3,1.6,.5,1),filter .18s}
+  [data-item]:hover,[data-comp]:hover{transform:translateY(-2px) scale(1.12);filter:drop-shadow(0 4px 10px rgba(245,196,81,.35))}
+
+  /* unit cards */
+  .unit .art img:not(.shop){transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+  .unit:hover .art img:not(.shop){transform:scale(1.06)}
+  .unit:hover{box-shadow:0 12px 30px rgba(0,0,0,.35)}
+
+  /* hex boards: units drop in when the board scrolls into view */
+  .board.rv .hex.u,.board.rv .stars,.board.rv .its{opacity:0}
+  .board.in .hex.u{animation:drop .5s cubic-bezier(.3,1.5,.5,1) both;animation-delay:calc(var(--i,0) * 55ms + 150ms)}
+  .board.in .stars{animation:fadeUp .35s ease both;animation-delay:calc(var(--i,0) * 55ms + 450ms)}
+  .board.in .its{animation:fadeUp .35s ease both;animation-delay:calc(var(--i,0) * 55ms + 500ms)}
+  .stars{animation:twinkle 3s ease-in-out infinite}
+
+  /* ranked list: a shine sweeps across the starred items */
+  .ranklist li{position:relative;overflow:hidden;transition:transform .18s}
+  .ranklist li:hover{transform:translateX(3px)}
+  .ranklist li.star::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 35%,rgba(255,231,160,.28) 50%,transparent 65%);transform:translateX(-120%);pointer-events:none}
+  .ranklist.in li.star::after{animation:sweep 1.1s ease .3s both}
+  .ranklist.in li.star:nth-child(2)::after{animation-delay:.42s}.ranklist.in li.star:nth-child(3)::after{animation-delay:.54s}.ranklist.in li.star:nth-child(4)::after{animation-delay:.66s}.ranklist.in li.star:nth-child(5)::after{animation-delay:.78s}
+
+  /* advisor */
+  .build.new{animation:slideIn .38s cubic-bezier(.2,.9,.3,1.2) both;animation-delay:calc(var(--i,0) * 45ms)}
+  .build.out{animation:slideOut .22s ease both}
+  .hmenu{animation:fadeUp .2s ease both}
+  .cnt.bump{animation:bump .3s cubic-bezier(.3,1.8,.5,1)}
+  .cbtn.bump img{animation:wiggle .45s ease}
+  .hchip{animation:pop .3s cubic-bezier(.3,1.6,.5,1) both}
+
+
+  /* menu + tooltip */
+  body.menu-open #menu a{animation:menuIn .28s cubic-bezier(.2,.9,.3,1.2) both;animation-delay:calc(var(--i,0) * 22ms)}
+  .itip{transform:translateY(6px) scale(.94);transform-origin:center bottom;transition:opacity .14s,transform .2s cubic-bezier(.3,1.6,.5,1)}
+  .itip.on{transform:none}
+  #fab{transition:transform .25s cubic-bezier(.3,1.6,.5,1),bottom .25s}
+  #fab:active{transform:scale(.92)}
+}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes pop{0%{opacity:0;transform:scale(.6)}100%{opacity:1;transform:none}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@keyframes shimmer{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+@keyframes float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-5px) rotate(.6deg)}}
+@keyframes wiggle{0%,100%{transform:none}25%{transform:rotate(-9deg) scale(1.1)}60%{transform:rotate(7deg) scale(1.08)}}
+@keyframes drop{0%{opacity:0;transform:translateY(-26px) scale(.7)}100%{opacity:1;transform:none}}
+@keyframes twinkle{0%,100%{filter:none}50%{filter:brightness(1.5) drop-shadow(0 0 4px rgba(245,196,81,.8))}}
+@keyframes sweep{to{transform:translateX(120%)}}
+@keyframes slideIn{from{opacity:0;transform:translateX(-14px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes slideOut{to{opacity:0;transform:translateX(24px) scale(.96)}}
+@keyframes bump{40%{transform:scale(1.6);color:var(--gold)}}
+@keyframes menuIn{from{opacity:0;transform:translateX(16px)}to{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<nav class="top"><div class="wrap">
+  <a class="brand" href="#top"><img src="assets/icons/favicon-48.png" alt="" style="border-radius:7px"><span>Beach Pop Fast 8</span></a>
+  <a class="l" href="#fork">Rules</a>
+  <a class="l" href="#unlocks">Unlocks</a>
+  <a class="l" href="#trait">Traits</a>
+  <a class="l" href="#units">Units</a>
+  <a class="l" href="#plan">Game Plan</a>
+  <a class="l" href="#advisor">Item Advisor</a>
+  <a class="l" href="#items">Item Cheat Sheet</a>
+  <a class="l" href="#augments">Augments</a>
+  <a class="l" href="#positioning">Positioning</a>
+  <a class="l" href="#learn">Learn</a>
+  <a class="l" href="#cup">Top Cut</a>
+  <a class="l" href="#log">Match log</a>
+  <a class="l" href="#golden">Golden Rules</a>
+</div></nav>
+
+<header class="hero wrap" id="top">
+  <div class="kicker">TFT Set 19 · Prismatic Tour · Fast 8</div>
+  <h1><span class="t">Beach Pop</span> Fast 8 <span class="r">Guide</span></h1>
+  <div class="statrow">
+    <span class="pill p-gold">B tier</span>
+    <span class="pill">59% top 4</span>
+    <span class="pill">Avg place 4.09</span>
+    <span class="pill">No rerolling</span>
+  </div>
+  <div class="choose">
+    <a class="choice teal main" href="#plan">
+      <img class="por wide" src="assets/units/graves.webp" alt="Graves">
+      <div><div class="if">AD items → main carry · 2★ · 4-cost</div><div class="nm">Graves</div>
+        <div class="trig row"><img class="ic" src="assets/items/bloodthirster.png" data-item="bt" alt=""><img class="ic" src="assets/items/titansresolve.png" data-item="titans" alt=""><img class="ic" src="assets/items/steraksgage.png" data-item="sterak" alt=""></div></div>
+    </a>
+    <a class="choice red" href="#plan">
+      <img class="por wide" src="assets/units/taliyah.webp" alt="Taliyah">
+      <div><div class="if">AP / Tear → Syndra, then Taliyah · 5-cost</div><div class="nm">Taliyah</div>
+        <div class="trig row"><img class="ic" src="assets/items/jeweledgauntlet.png" data-item="jg" alt=""><img class="ic" src="assets/items/spearofshojin.png" data-item="shojin" alt=""><img class="ic" src="assets/items/rabadonsdeathcap.png" data-item="rabadon" alt=""></div></div>
+    </a>
+  </div>
+</header>
+
+<!-- ================= RULES ================= -->
+<section id="fork" style="padding-top:30px"><div class="wrap">
+  <div class="kicker">Rules</div>
+  <ul class="bul two-col">
+    <li><span class="ics" id="r1"></span><span><b>Fast 8, no slow rolling.</b> Sit at 50g · Lvl 6 at 3-2 · 7 at 4-1 · <b>8 at 4-2 → roll down</b> for 2★ Graves + Zac <a class="gr" href="#g-level">📚 Carry's level</a></span></li>
+    <li><span class="ics" id="r2"></span><span><b>Items pick the carry:</b> AD → <b>Graves</b> (preferred) · AP / Tear → <b>Syndra</b>, then <b>Taliyah</b> <a class="gr" href="#g-duo">📚 Two carries</a></span></li>
+    <li><span class="ics" id="r3"></span><span><b>Unlock as you go:</b> 2 items on a Beach Pop unit → Ashe · Lvl 7 + 5 Beach Pop / Juggernaut → Zac · 1-to-5-cost line-up on Beach Pop hexes → Taliyah</span></li>
+    <li><span class="ics" id="r4"></span><span><b>Instruments touch your carries:</b> Beach Pop units next to one get attack speed + mana; everyone next to one heals</span></li>
+  </ul>
+</div></section>
+
+<!-- ================= UNLOCKS ================= -->
+<section id="unlocks"><div class="wrap">
+  <h2 style="margin-bottom:6px">🔓 Unlock path</h2>
+  <div class="note-s">Four of the core units start locked. Each unlock is a quest; once done, the unit shows up in your next shop and stays in your pool.</div>
+  <ol class="unlock" id="unlockList"></ol>
+  <div class="panel hype">
+    <h3>🎸 Instruments</h3>
+    <div class="instRef" id="instRef"></div>
+    <ul class="bul tight two-col" style="margin-top:12px">
+      <li><span>🎯 <b>Place them so a Beach Pop carry touches one:</b> Graves + Taliyah share one, Syndra + Zoe the other</span></li>
+      <li><span>🎲 <b>Random pair each game:</b> one of Rainstick / Maracas / Bongos + one of Panflute / Steeldrums / Ukelele</span></li>
+      <li><span>🌊 <b>Beach Pop hexes</b> are what Taliyah's unlock counts: line up a 1-, 2-, 3-, 4- and 5-cost on them</span></li>
+      <li><span>🔁 Move them like units between rounds when your carry moves</span></li>
+    </ul>
+  </div>
+</div></section>
+
+<!-- ================= TRAITS ================= -->
+<section id="trait"><div class="wrap">
+  <h2 style="margin-bottom:18px"><img class="tr" src="assets/traits/beachpop.svg" alt="" style="width:32px;height:32px;display:inline;vertical-align:-6px;margin-right:8px">Beach Pop <span class="dim" style="font-size:.6em">3 · 5 · 7</span></h2>
+  <div class="track t3" id="bpTrack"></div>
+  <ul class="bul tight two-col" style="margin-top:14px">
+    <li><span>🎵 <b>Empowered</b> = standing next to an instrument. Every empowered unit regenerates Health</span></li>
+    <li><span>🏝️ Empowered <b>Beach Pop</b> units also gain <b>Attack Speed + Mana</b>, so put carries there first</span></li>
+  </ul>
+  <div class="kicker" style="margin-top:26px">Other traits on the board</div>
+  <ul class="bul tight two-col" id="otherTraits"></ul>
+</div></section>
+
+<!-- ================= UNITS ================= -->
+<section id="units"><div class="wrap">
+  <h2>Meet the Units</h2>
+  <div class="filters" id="unitFilters" style="margin-top:14px">
+    <button class="fbtn on" data-f="all">All</button>
+    <button class="fbtn" data-f="core">Final board</button>
+    <button class="fbtn" data-f="early">Early game</button>
+    <button class="fbtn" data-f="beach">Beach Pop</button>
+    <button class="fbtn" data-f="flex">Flex</button>
+  </div>
+  <div class="grid units" id="unitGrid"></div>
+</div></section>
+
+<!-- ================= GAME PLAN ================= -->
+<section id="plan" class="plan teal"><div class="wrap">
+  <div class="plan-head">
+    <img class="big" src="assets/units-sq/graves.png" alt="Graves">
+    <div>
+      <div class="kicker">Every game · fast 8 · roll down at 4-2</div>
+      <h2>Game Plan</h2>
+      <div class="muted"><span class="pill p-teal">2★ Graves</span> <span class="pill p-tank">2★ Zac</span> <span class="pill p-red">Syndra → Taliyah</span> <span class="pill p-gold">Beach Pop 7</span></div>
+    </div>
+  </div>
+
+  <div class="timeline" id="tl"></div>
+
+  <h3 style="margin:26px 0 12px">🚦 Checkpoints <span class="small dim">· HP + gold lines are guidelines</span></h3>
+  <div class="cps" id="cps"></div>
+  <h3 style="margin:26px 0 12px">🚑 When the plan breaks</h3>
+  <div class="recov" id="recov"></div>
+
+  <h3 style="margin:26px 0 12px">Comp tips</h3>
+  <ul class="bul tight two-col" id="tips"></ul>
+
+  <div class="two">
+    <div class="panel">
+      <h3 style="margin-bottom:12px">Who holds what <a class="gr" href="#g-33">📚 3 + 3</a><a class="gr" href="#g-dead">📚 No dead parts</a></h3>
+      <div id="carries"></div>
+    </div>
+    <div class="panel">
+      <h3 style="margin-bottom:10px">Final boards</h3>
+      <div class="filters" id="bvTabs" style="margin-bottom:10px"></div>
+      <div id="board8"></div>
+      <div class="small" id="bvWhen" style="margin-top:10px"></div>
+      <div class="bvt" id="bvTraits"></div>
+      <div class="emp small" id="bvEmp"></div>
+      <ul class="bul tight" style="margin-top:12px" id="board8notes"></ul>
+    </div>
+  </div>
+</div></section>
+
+<!-- ================= ADVISOR ================= -->
+<section id="advisor"><div class="wrap">
+  <h2>Item Advisor</h2>
+  <ul class="bul tight" style="margin:14px 0 18px;max-width:640px"><li><span>➕ Add your components → see what to build and who holds it <a class="gr" href="#g-slam">📚 Slam, don't greed</a></span></li></ul>
+  <div class="adv">
+    <div class="panel">
+      <div class="fld" style="margin-bottom:12px"><span class="lb">Main carry <span class="dim">(whoever you are building)</span></span>
+        <div class="seg"><button type="button" data-cm="auto">Auto · Tear → Syndra</button><button type="button" data-cm="graves">Graves</button><button type="button" data-cm="ap">Syndra / Taliyah</button></div></div>
+      <div class="bench" id="bench"></div>
+      <div class="btnrow"><button class="btn" id="resetBench">Clear</button></div>
+    </div>
+    <div><div id="builds"></div></div>
+  </div>
+  <div class="panel" style="margin-top:18px">
+    <h3>🤔 What am I missing?</h3>
+    <div class="filters" id="missChips" style="margin:12px 0 0"></div>
+    <div id="missOut"></div>
+  </div>
+</div></section>
+
+<!-- ================= ITEM CHEAT SHEET ================= -->
+<section id="items"><div class="wrap">
+  <h2>Item Cheat Sheet</h2>
+  <ul class="bul tight two-col" style="margin:14px 0 18px">
+    <li>👆 Click a component to highlight its items</li>
+    <li><span><b style="color:var(--gold)">★1–5</b> must-build · <b>6–10</b> good · faded = skip</span></li>
+    <li><span class="pill p-teal">Graves · AD</span><span class="pill p-red">Syndra / Taliyah · AP</span><span class="pill p-tank">Zac</span></li>
+    <li><span>Two units want <b>Jeweled Gauntlet</b>: Syndra first, then Taliyah <a class="gr" href="#g-crit">📚 Why JG</a></span></li>
+  </ul>
+  <div class="ilayout">
+    <div class="igrid" id="igrid"></div>
+    <div>
+      <div class="panel iinfo" id="iinfo"></div>
+      <div class="panel ranklist" id="rankList"></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ================= AUGMENTS ================= -->
+<section id="augments"><div class="wrap">
+  <h2 style="margin-bottom:14px">Augments <span class="dim" style="font-size:.55em">· by stage</span></h2>
+  <ul class="bul tight two-col" style="margin-bottom:14px">
+    <li><span>✅ All in the <b>Set 19</b> augment list. Tiers are fixed per game, so any of these can show up at any pick</span></li>
+    <li><span>📈 An XP augment isn't automatically good: <b>it has to fit when you level</b></span></li>
+  </ul>
+  <div class="filters" id="augTabs"></div>
+  <div class="note-s" id="augNote" style="margin:4px 0 14px"></div>
+  <div class="augs2" id="augGrid"></div>
+</div></section>
+
+<!-- ================= POSITIONING ================= -->
+<section id="positioning"><div class="wrap">
+  <h2>⚔️ Positioning by matchup</h2>
+  <ul class="bul tight" style="margin:12px 0 14px;max-width:760px"><li><span>Scout first, then move <b>only what the threat needs</b>. No setup is always right <a class="gr" href="#g-pos">📚 Tank first</a></span></li></ul>
+  <div class="filters" id="muTabs"></div>
+  <div class="mu"><div class="panel"><div id="muBoard"></div></div><div class="panel"><ul class="mun" id="muNotes"></ul></div></div>
+</div></section>
+
+<!-- ================= LEARN ================= -->
+<section id="learn"><div class="wrap">
+  <h2>🧠 Advanced mechanics</h2>
+  <div class="note-s" style="margin:8px 0 6px">Plain answer first; open for the details.</div>
+  <details class="lx"><summary>🎰 Shop odds + pool <span class="small muted" id="oddsSum"></span></summary><div class="bd">
+    <table class="odds" id="oddsTbl"></table><div class="fmt" id="poolTbl"></div>
+    <div class="small muted" id="poolNote"></div></div></details>
+  <details class="lx"><summary>🔎 Copy finder <span class="small muted">· can I still 2★ Graves, and what will it cost?</span></summary><div class="bd">
+    <div class="form" id="cfForm" style="max-width:640px"></div><div class="dw" style="margin-top:12px"><div class="d" id="cfOut" aria-live="polite"></div>
+    <div class="w">Expected copies per shop = 5 slots × that cost's odds × (copies left ÷ that cost's pool left). Averages: real rolls swing a lot.</div></div></div></details>
+  <details class="lx"><summary>🎸 Instruments + Beach Pop hexes <span class="small muted">· carries next to an instrument</span></summary><div class="bd"><ul class="bul tight">
+    <li><span id="instLearn"></span></li>
+    <li><span>Instruments are placed like units. Move them every time your carries move, or the buff goes to the wrong unit</span></li>
+    <li><span>Non-Beach Pop units next to one (Yuumi, Illaoi) still get the Health regen, just not the attack speed + mana</span></li></ul></div></details>
+  <details class="lx"><summary>✋ Holding units + contests <span class="small muted">· benched units are out of the pool</span></summary><div class="bd"><ul class="bul tight">
+    <li><span>Every copy on any board or bench is <b>out of the pool</b>. A rival holding 2 Graves leaves 8 for everyone else</span></li>
+    <li><span>Scout before 4-2: if someone else is on Graves or Zac, roll at 8 anyway but plan for a 1★ in that slot</span></li>
+    <li><span>Holding a pair of a 4-cost for the roll-down is fine; holding pairs of units you'll sell is not</span></li></ul></div></details>
+  <details class="lx"><summary>👑 Beach Pop emblems <span class="small muted">· one fewer Beach Pop unit for 7</span></summary><div class="bd"><ul class="bul tight">
+    <li><span><b>Beach Pop Crown</b> = Emblem + Blue Buff + Syndra. <b>Beach Pop Circlet</b> = Emblem + Sparring Gloves + Graves</span></li>
+    <li><span>Put the Emblem on a unit you play anyway (Yuumi): Beach Pop 7 with a free slot for Swain or Illaoi</span></li></ul></div></details>
+  <details class="lx"><summary>⬆️ When to go Lvl 9 <span class="small muted" id="lvl9Sum"></span></summary><div class="bd"><ul class="bul tight">
+    <li><span>Only after 2★ Graves + 2★ Zac, with HP 50+ and 50g+ left</span></li>
+    <li><span id="lvl9Odds"></span></li>
+    <li><span>Low HP? Spend at 8 instead: a stronger board now beats a better shop later</span></li></ul></div></details>
+</div></section>
+
+<!-- ================= TOP CUT ================= -->
+<section id="cup"><div class="wrap">
+  <h2>🏆 Top Cut mindset</h2>
+  <div class="fmt"><span class="pill p-gold">Convergence Fest Top Cut</span><span class="pill">Lobbies of 8</span><span class="pill">1 game per round</span><span class="pill">Top 4 advance · bottom 4 out</span><span class="pill">4 rounds → 8-player final</span></div>
+  <div class="vs">
+    <div class="panel"><h3>📈 Ranked ladder</h3><ul class="bul tight" style="margin-top:10px"><li><span>Best <b>average</b> placement over many games</span></li><li><span>1st is worth much more LP than 4th: some greed pays off</span></li><li><span>Greeding Lvl 9 is fine if it wins more often than it busts</span></li></ul></div>
+    <div class="panel"><h3>✂️ Top Cut rounds</h3><ul class="bul tight" style="margin-top:10px"><li><span><b>4th = 1st</b>, 5th = out</span></li><li><span>Lower variance: roll at 8 for a solid board before greeding Lvl 9</span></li><li><span>Combat augments over econ once HP drops under ~60</span></li></ul></div>
+  </div>
+  <div id="cupDo"></div>
+</div></section>
+
+<!-- ================= MATCH LOG ================= -->
+<section id="log"><div class="wrap">
+  <h2>📈 Match log</h2>
+  <ul class="bul tight" style="margin:12px 0 16px;max-width:760px"><li><span>Placement is the only must. Saved in this browser only; export to back up or move devices</span></li></ul>
+  <div class="logw">
+    <div class="panel"><div class="form" id="logForm"></div></div>
+    <div class="panel"><div id="logStats"></div>
+      <div class="btnrow" style="margin-top:12px"><button class="btn" id="logJson" type="button">⬇ JSON</button><button class="btn" id="logCsv" type="button">⬇ CSV</button>
+      <label class="btn" style="cursor:pointer">⬆ Import JSON<input id="logImp" type="file" accept=".json,application/json" hidden></label></div></div>
+  </div>
+</div></section>
+
+<!-- ================= GOLDEN RULES ================= -->
+<section id="golden"><div class="wrap">
+  <h2>📚 Golden Rules <span class="dim" style="font-size:.55em">· any comp, any set</span></h2>
+  <div class="vids">
+    <a class="vid" href="https://www.youtube.com/watch?v=7D1Fj883120" target="_blank" rel="noopener"><span class="th"><img src="assets/resources/tftacademy-items.jpg" alt="" loading="lazy"></span><span><b>You're Building Items Wrong!</b><span class="small muted">Frodan · TFT Academy · items</span></span></a>
+    <a class="vid" href="https://www.youtube.com/watch?v=PuhMnPkKQlE" target="_blank" rel="noopener"><span class="th"><img src="assets/resources/dpei-reroll.jpg" alt="" loading="lazy"></span><span><b>You're Rerolling at the Wrong Time</b><span class="small muted">dpei · Road to Masters · rolling</span></span></a>
+    <a class="vid" href="https://www.youtube.com/watch?v=QNfN0eSp7tU" target="_blank" rel="noopener"><span class="th"><img src="assets/resources/ripple-reroll.jpg" alt="" loading="lazy"></span><span><b>How to Play ANY Reroll Comp Like a Pro</b><span class="small muted">Ripple · TFT Academy · tempo + cap</span></span></a>
+  </div>
+  <div class="grules" id="grules"></div>
+</div></section>
+
+<div id="menuBg"></div>
+<nav id="menu" aria-label="Sections" aria-hidden="true">
+  <div class="mh">Jump to</div>
+  <a href="#top" data-s="top"><span class="mi"><img src="assets/icons/favicon-48.png" alt=""></span>Top</a>
+  <div class="mh2">Quick reference</div>
+  <a href="#fork" data-s="fork"><span class="mi">📋</span>Rules</a>
+  <a href="#unlocks" data-s="unlocks"><span class="mi">🔓</span>Unlocks + Instruments</a>
+  <a href="#trait" data-s="trait"><span class="mi"><img class="tr" src="assets/traits/beachpop.svg" alt="" style="padding:5px"></span>Traits</a>
+  <a href="#units" data-s="units"><span class="mi" style="border-color:var(--c5)"><img src="assets/units-sq/taliyah.png" alt=""></span>Units</a>
+  <a href="#plan" data-s="plan"><span class="mi" style="border-color:var(--teal)"><img src="assets/units-sq/graves.png" alt=""></span><span>Game Plan · <b style="color:var(--teal)">checkpoints</b></span></a>
+  <a href="#items" data-s="items"><span class="mi"><img src="assets/items/bloodthirster.png" alt=""></span>Item Cheat Sheet</a>
+  <div class="mh2">Decision tools</div>
+  <a href="#advisor" data-s="advisor"><span class="mi"><img src="assets/items/sparringgloves.png" alt=""></span>Item Advisor</a>
+  <a href="#augments" data-s="augments"><span class="mi"><img src="assets/augments/tons-of-stats-ii.png" alt=""></span>Augments</a>
+  <a href="#positioning" data-s="positioning"><span class="mi">⚔️</span>Positioning</a>
+  <div class="mh2">Learn + review</div>
+  <a href="#learn" data-s="learn"><span class="mi">🧠</span>Advanced mechanics</a>
+  <a href="#cup" data-s="cup"><span class="mi">🏆</span>Top Cut mindset</a>
+  <a href="#log" data-s="log"><span class="mi">📈</span>Match log</a>
+  <a href="#golden" data-s="golden"><span class="mi">📚</span>Golden Rules</a>
+  <a href="beach-pop-guide.pdf" target="_blank" rel="noopener" class="pdf"><span class="mi">📄</span>Printable PDF</a>
+  <div class="sep"></div>
+  <button class="qrt" id="menuQr"><span class="mi">📌</span><span id="menuQrLbl">Hide Quick Ref</span></button>
+</nav>
+<button id="fab" aria-label="Open section menu" aria-expanded="false" aria-controls="menu"><span></span></button>
+
+<aside id="qr">
+  <div class="bar">
+    <b><img class="tr" src="assets/traits/beachpop.svg" alt=""><span>Quick Ref</span></b>
+    <div class="costs"><i style="color:var(--dim);font-style:normal;margin-right:2px">cost:</i><span class="b1">1g</span><span class="b2">2g</span><span class="b3">3g</span><span class="b4">4g</span><span class="b5">5g</span></div>
+    <button class="tog" id="qrTog">▾ Hide</button>
+  </div>
+  <div class="body" id="qrBody"></div>
+  <div class="dots" id="qrDots"></div>
+</aside>
+
+<footer><div class="wrap">
+  <p>Beach Pop Fast 8 Guide isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, Teamfight Tactics and all associated properties are trademarks or registered trademarks of Riot Games, Inc.</p>
+</div></footer>
+
+<script>
+// SITE must be unique per guide: every guide on one GitHub Pages domain shares localStorage.
+const SITE="beach-pop-fast8";
+const store={get(k){try{return localStorage.getItem(SITE+":"+k)}catch(e){return null}},set(k,v){try{localStorage.setItem(SITE+":"+k,v)}catch(e){}}};
+
+//#region testable (tools/test-logic.mjs runs everything up to #endregion in Node)
+/* ---------------- DATA ---------------- */
+const C = {
+  sword:{s:"Sword",n:"B.F. Sword",f:"bfsword"}, bow:{s:"Bow",n:"Recurve Bow",f:"recurvebow"}, rod:{s:"Rod",n:"Needlessly Large Rod",f:"needlesslylargerod"},
+  tear:{s:"Tear",n:"Tear of the Goddess",f:"tearofthegoddess"}, vest:{s:"Vest",n:"Chain Vest",f:"chainvest"}, cloak:{s:"Cloak",n:"Negatron Cloak",f:"negatroncloak"},
+  belt:{s:"Belt",n:"Giant's Belt",f:"giantsbelt"}, gloves:{s:"Gloves",n:"Sparring Gloves",f:"sparringgloves"}
+};
+const CK = Object.keys(C);
+const ci = k => `assets/items/${C[k].f}.png`;
+// tags: Z = Graves (AD carry), S = Syndra / Taliyah (AP carries), T = Zac (tank), ZS = both carries
+const I = {
+  deathblade:["Deathblade","deathblade","sword","sword","","Big flat Attack Damage."],
+  giantslayer:["Giant Slayer","madredsbloodrazor","sword","bow","","Bonus damage vs tanks."],
+  gunblade:["Hextech Gunblade","hextechgunblade","sword","rod","","Heals the lowest ally from damage dealt."],
+  shojin:["Spear of Shojin","spearofshojin","sword","tear","S","Attacks give bonus Mana. Taliyah core: more rock throws."],
+  eon:["Edge of Night","guardianangel","sword","vest","","At low HP: untargetable, cleanse, heal."],
+  bt:["Bloodthirster","bloodthirster","sword","cloak","Z","Omnivamp + shield at low HP. Graves #1: he dashes into fights, so he needs to heal."],
+  sterak:["Sterak's Gage","steraksgage","sword","belt","Z","AD + HP, big shield at 60% HP. Graves core."],
+  ie:["Infinity Edge","infinityedge","sword","gloves","","AD + crit."],
+  redbuff:["Red Buff","rapidfirecannon","bow","bow","","Attacks Burn + Wound."],
+  guinsoo:["Guinsoo's Rageblade","guinsoosrageblade","bow","rod","","Stacking Attack Speed."],
+  voidstaff:["Void Staff","voidstaff","bow","tear","S","Shreds Magic Resist. Syndra core."],
+  titans:["Titan's Resolve","titansresolve","bow","vest","Z","Stacks AD + Armor/MR when hitting or hit. Graves core."],
+  kraken:["Kraken's Fury","krakenslayer","bow","cloak","","Stacking AD, then attack speed."],
+  nashor:["Nashor's Tooth","leviathan","bow","belt","","Attacks give bonus Mana."],
+  lw:["Last Whisper","lastwhisper","bow","gloves","","Sunders Armor."],
+  rabadon:["Rabadon's Deathcap","rabadonsdeathcap","rod","rod","S","Huge AP. Taliyah core."],
+  archangel:["Archangel's Staff","archangelsstaff","rod","tear","","AP that grows every few seconds."],
+  crownguard:["Crownguard","crownguard","rod","vest","","Shield at combat start, then AP."],
+  ionic:["Ionic Spark","ionicspark","rod","cloak","","Shreds MR nearby; zaps enemy casters."],
+  morello:["Morellonomicon","morellonomicon","rod","belt","S","Burn + Wound (anti-heal). Taliyah backup."],
+  jg:["Jeweled Gauntlet","jeweledgauntlet","rod","gloves","S","AP + crit, abilities can crit. Syndra first, then Taliyah."],
+  bluebuff:["Blue Buff","bluebuff","tear","tear","S","More AD and AP from all sources. Syndra's 3rd (tft.ninja board)."],
+  vow:["Protector's Vow","frozenheart","tear","vest","","Mana + shield at low HP."],
+  helm:["Adaptive Helm","adaptivehelm","tear","cloak","","More Mana from all sources."],
+  visage:["Spirit Visage","spiritvisagerr","tear","belt","T","Regenerates missing HP. Zac core."],
+  hoj:["Hand of Justice","unstableconcoction","tear","gloves","Z","AD + AP + Omnivamp. Graves option (TFT Academy)."],
+  bramble:["Bramble Vest","bramblevest","vest","vest","T","Less damage from attacks. Zac vs AD."],
+  gargoyle:["Gargoyle Stoneplate","gargoylestoneplate","vest","cloak","T","Armor + MR per enemy targeting it. Zac #1."],
+  sunfire:["Sunfire Cape","redbuff","vest","belt","","Max HP + periodic Burn/Wound."],
+  steadfast:["Steadfast Heart","nightharvester","vest","gloves","","Durability, more while healthy."],
+  dclaw:["Dragon's Claw","dragonsclaw","cloak","cloak","T","Max HP + periodic healing. Zac backup."],
+  evenshroud:["Evenshroud","spectralgauntlet","cloak","belt","T","Sunders nearby enemies; early resists. Zac option (Mobalytics carousel)."],
+  qss:["Quicksilver","quicksilver","cloak","gloves","Z","CC immunity + stacking AS. Graves backup (TFT Academy)."],
+  warmog:["Warmog's Armor","warmogsarmor","belt","belt","T","Tons of max HP. Zac core: his cast heals from it."],
+  flail:["Striker's Flail","powergauntlet","belt","gloves","","Crits give stacking Damage Amp."],
+  thief:["Thief's Gloves","thiefsgloves","gloves","gloves","","2 random items every round."]
+};
+const itemImg = k => `assets/items/${I[k][1]}.png`;
+const recipe = {}; for (const k in I){ const [,, a,b] = I[k]; recipe[[a,b].sort().join("+")] = k; }
+
+const T = {"Beach Pop":"beachpop",Juggernaut:"juggernaut",Encore:"encore",Illbeats:"illbeats",Frontman:"frontman",Arcanist:"arcanist",Renegade:"renegade",
+  Choreographer:"choreographer",Swiftstriker:"swiftstriker",Rock:"rock","Ionic Spark":"ionicspark"};
+const U = [
+  {k:"graves",n:"Graves",c:4,t:["Beach Pop","Renegade"],tags:"core beach",star:2,
+   ab:["Left Hand Free","0/30","For his next attacks: bonus Attack Speed, dashes to targets, fires a cone of bullets. A kill empowers another attack."],role:"Main carry for AD items. Range 2 and dashes around, so he wants healing + bulk.",items:["bt","titans","sterak"]},
+  {k:"taliyah",n:"Taliyah",c:5,t:["Beach Pop","Encore"],tags:"core beach",star:1,unlock:"Start a fight with a 1-, 2-, 3-, 4- and 5-cost on Beach Pop hexes",
+   ab:["Crowd Surfing","0/40","Throws 3 rocks at the target. Every 3rd cast she surfs in a line instead: max-Health magic damage + knock-up."],role:"AP carry at 8–9. Takes the next AP / Tear items. Encore: an extra rock.",items:["jg","shojin","rabadon"]},
+  {k:"syndra",n:"Syndra",c:3,t:["Beach Pop","Choreographer"],tags:"core beach early",star:2,unlock:"Field enough unique star levels across Beach Pop / Choreographer units",
+   ab:["Serve's Up","0/30","Spikes a volleyball at the target; it bounces to the enemy behind with the fewest items."],role:"AP carry until Taliyah, then keeps her items. Choreographer: back rows gain Damage Amp.",items:["jg","voidstaff","bluebuff"]},
+  {k:"zac",n:"Zac",c:4,t:["Beach Pop","Juggernaut"],tags:"core beach",star:2,unlock:"Lvl 7 + 5 unique Beach Pop or Juggernaut units on the board",
+   ab:["Cannonball!","60/110","Charges up (Durability + heal), then leaps onto the target: magic damage + knock-up around him."],role:"Main tank. Juggernaut 2 with Taric.",items:["gargoyle","warmog","visage"]},
+  {k:"renekton",n:"Renekton",c:2,t:["Beach Pop","Frontman"],tags:"core beach early",star:2,
+   ab:["Crocodile Rock","60/110","Grows (max Health for the fight), then spins for physical damage around him."],role:"Second frontliner all game. Frontman: team Health.",items:[]},
+  {k:"taric",n:"Taric",c:1,t:["Beach Pop","Juggernaut"],tags:"core beach early",star:2,
+   ab:["Good Reverberations","30/90","Shields himself and a nearby damaged ally."],role:"Cheap front line + Juggernaut 2 with Zac.",items:[]},
+  {k:"zoe",n:"Zoe",c:1,t:["Beach Pop","Arcanist"],tags:"core beach early",star:2,
+   ab:["Paddle Ball","15/90","Paddle ball redirected to the farthest enemy; ricochets on kills."],role:"Back-line Beach Pop body. Arcanist 2 with Swain.",items:[]},
+  {k:"ashe",n:"Ashe",c:2,t:["Beach Pop","Swiftstriker"],tags:"early beach",star:2,unlock:"A Beach Pop champion holding 2 items",
+   ab:["Feelin' Shot Shot Shot","20/60","Her next 6 attacks gain 50% Attack Speed and become flurries of 3 arrows."],role:"Holds Graves' AD items in stage 2–3. 7th Beach Pop until Taliyah.",items:[]},
+  {k:"yuumi",n:"Yuumi",c:4,t:["Illbeats","Encore"],tags:"core",star:1,
+   ab:["Girl, Put Your Records On (Your Head)","0/20","Spinning discs stack on the target and shred Magic Resist; at max stacks they topple for big damage."],role:"Lvl 8 flex: Encore 2 with Taliyah + MR shred.",items:[]},
+  {k:"illaoi",n:"Illaoi",c:2,t:["Illbeats","Frontman"],tags:"core flex",star:2,
+   ab:["Smash-Hit Royalties","30/90","Heals and hits a 2-hex line. Quest: cast in player combat for Fame; at the threshold she goes Platinum."],role:"Lvl 9: Illbeats 2 with Yuumi + Frontman 2 with Renekton.",items:[]},
+  {k:"swain",n:"Swain",c:3,t:["Rock","Arcanist","Frontman"],tags:"flex",star:2,
+   ab:["A Cruel Devil's Thesis","70/120","Demon Form: max Health + damage to adjacent enemies each second."],role:"Extra frontline instead of Yuumi: Frontman 2 + Arcanist 2 with Zoe.",items:[]},
+  {k:"annie",n:"Annie",c:2,t:["Ionic Spark","Arcanist","Juggernaut"],tags:"early",star:2,ab:null,role:"Stage 2 opener (Blitz). Holds tank parts until Zac, then sell her.",items:[]},
+  {k:"aurora",n:"Aurora",c:4,t:["Ionic Spark","Renegade"],tags:"flex",star:1,ab:null,role:"Lvl 8–9 flex (Blitz): Renegade 2 with Graves.",items:[]}
+];
+const UK = Object.fromEntries(U.map(u=>[u.k,u]));
+const sq = k => `assets/units-sq/${k}.png`, sp = k => `assets/units/${k}.webp`;
+
+/* ================= PATCH DATA: edit here when the patch changes ================= */
+// Checked 2026-11-22 against tft.ninja (Riot Dev Drop Nov 15) + tftflow (odds/pool, Beach Pop numbers 19.1b, unlocks). See README "Sources".
+const PATCH = {
+  checked:"2026-11-22",
+  odds:{3:[75,25,0,0,0],4:[55,30,15,0,0],5:[45,33,20,2,0],6:[30,40,25,5,0],7:[16,30,43,10,1],8:[15,20,32,30,3],9:[10,17,25,33,15]}, // % per cost 1..5
+  pool:{1:[30,15],2:[25,18],3:[18,16],4:[10,22],5:[9,19]},   // [copies of each champion, champions in that cost]
+  bp:{regen:[2,3], 3:{inst:1,as:25,mana:5}, 5:{inst:2,as:40,mana:8}, 7:{inst:2,as:40,mana:8,every:10,heal:20,breeze:40}}, // regen: [% HP, every s]; mana every 3 s
+  unlock:{asheItems:2,zacLevel:7,zacUnique:5},
+  traits:{"Beach Pop":[3,5,7],Juggernaut:[2,4,6],Encore:[2,4],Illbeats:[2,3,4],Frontman:[2,4,6],Arcanist:[2,4,6],Renegade:[2,3,4,5],
+    Choreographer:[2,3,4,5],Swiftstriker:[2,3,4,5],Rock:[3,4,5,7],"Ionic Spark":[3,5,7,10]}
+};
+
+/* ================= LOGIC (pure: tested by tools/test-logic.mjs) ================= */
+function parseStage(v){ const m=/^\s*([1-7])\s*-\s*([1-7])\s*$/.exec(String(v==null?"":v)); return m?[+m[1],+m[2]]:null; }
+
+function traitCount(keys){
+  const n={}; keys.forEach(k=>UK[k].t.forEach(t=>n[t]=(n[t]||0)+1));
+  return Object.entries(n).map(([t,c])=>{ const bp=PATCH.traits[t]||[]; return {t,c,bp,on:bp.filter(b=>c>=b).pop()||0,next:bp.find(b=>b>c)||null}; })
+    .sort((a,b)=>(b.on>0)-(a.on>0)||b.c-a.c||a.t.localeCompare(b.t));
+}
+
+/* Board hexes: 4 rows × 7, odd rows sit half a hex to the right (matches the drawn board). */
+function neighbors(r,c){
+  const d = r%2 ? [[-1,0],[-1,1],[0,-1],[0,1],[1,0],[1,1]] : [[-1,-1],[-1,0],[0,-1],[0,1],[1,-1],[1,0]];
+  return d.map(([a,b])=>[r+a,c+b]).filter(([y,x])=>y>=0&&y<4&&x>=0&&x<7);
+}
+/* Instruments the board gets from its Beach Pop count */
+function instFor(cells){ const n=cells.filter(c=>UK[c[2]].t.includes("Beach Pop")).length; const on=PATCH.traits["Beach Pop"].filter(b=>n>=b).pop(); return on?PATCH.bp[on].inst:0; }
+/* Units standing next to an instrument; bp = the Beach Pop ones (they also get Attack Speed + Mana) */
+function empowered(cells,inst){
+  const near=new Set(); (inst||[]).forEach(([r,c])=>neighbors(r,c).forEach(([y,x])=>near.add(y+"-"+x)));
+  const all=cells.filter(c=>near.has(c[0]+"-"+c[1])).map(c=>c[2]);
+  return {all,bp:all.filter(k=>UK[k].t.includes("Beach Pop")),costs:[...new Set(all.map(k=>UK[k].c))].sort()};
+}
+
+/* Copy finder: expected copies of one champion per shop = 5 slots × tier odds × (copies left ÷ that tier's pool left) */
+function copyOdds(o){
+  const cost=Math.min(Math.max(+o.cost||1,1),5), lvl=Math.min(Math.max(+o.level||5,3),9), own=Math.max(0,+o.own||0), seen=Math.max(0,+o.seen||0), taken=Math.max(0,+o.taken||0);
+  const goal=+o.target===9?9:3;
+  const [copies,champs]=PATCH.pool[cost], odds=PATCH.odds[lvl][cost-1]/100;
+  const left=Math.max(0,copies-own-seen), tier=Math.max(1,copies*champs-own-seen-taken), need=Math.max(0,goal-own);
+  const perShop=5*odds*left/tier;
+  return {left,need,goal,perShop,odds:odds*100,enough:left>=need,rolls:perShop>0?need/perShop:Infinity,gold:perShop>0?2*need/perShop:Infinity};
+}
+
+/* Final board variants (trait counts + empowered units are computed, not typed). inst = instrument hexes. */
+const ZAC=["gargoyle","warmog","visage"], GRV=["bt","titans","sterak"], SYN=["jg","voidstaff","bluebuff"], TAL=["jg","shojin","rabadon"];
+const BV = [
+  {id:"s3",n:"Stage 3",lvl:6,when:"Lvl 6 at 3-2. Beach Pop 5 = 2 instruments. Annie holds tank parts, Ashe holds Graves' items.",inst:[[2,5],[2,1]],
+   cells:[[0,2,"renekton",2,[]],[0,3,"annie",2,["gargoyle","warmog"]],[0,4,"taric",2,[]],[2,4,"ashe",2,["bt","sterak"]],[3,0,"syndra",2,["jg","voidstaff"]],[3,1,"zoe",2,[]]]},
+  {id:"l7",n:"Beach Pop 7",lvl:7,when:"Lvl 7 with Zac + Graves: every non-Taliyah Beach Pop unit = Beach Pop 7 already.",inst:[[2,5],[2,1]],
+   cells:[[0,2,"renekton",2,[]],[0,3,"zac",1,["gargoyle","warmog"]],[0,4,"taric",2,[]],[1,4,"graves",1,["bt","sterak"]],[3,0,"syndra",2,["jg","voidstaff"]],[3,1,"zoe",2,[]],[3,5,"ashe",2,[]]]},
+  {id:"notal",n:"No Taliyah",lvl:8,when:"Lvl 8 before Taliyah unlocks: Ashe stays the 7th Beach Pop, Syndra keeps the AP items.",inst:[[2,5],[2,1]],
+   cells:[[0,2,"renekton",2,[]],[0,3,"zac",2,ZAC],[0,4,"taric",2,[]],[1,4,"graves",2,GRV],[3,0,"syndra",2,SYN],[3,1,"zoe",2,[]],[3,4,"yuumi",1,[]],[3,5,"ashe",2,[]]]},
+  {id:"std",n:"Standard",lvl:8,when:"Default once Taliyah is unlocked (tft.ninja's Beach Pop board minus Illaoi).",inst:[[2,5],[2,1]],
+   cells:[[0,2,"renekton",2,[]],[0,3,"zac",2,ZAC],[0,4,"taric",2,[]],[1,4,"graves",2,GRV],[3,0,"syndra",2,SYN],[3,1,"zoe",2,[]],[3,4,"yuumi",1,[]],[3,5,"taliyah",1,TAL]]},
+  {id:"front",n:"More frontline",lvl:8,when:"Front line dies before your carries cast: Swain for Yuumi = Frontman 2 + Arcanist 2.",inst:[[2,5],[2,1]],
+   cells:[[0,2,"renekton",2,[]],[0,3,"zac",2,ZAC],[0,4,"taric",2,[]],[0,5,"swain",2,[]],[1,4,"graves",2,GRV],[3,0,"syndra",2,SYN],[3,1,"zoe",2,[]],[3,5,"taliyah",1,TAL]]},
+  {id:"cap",n:"High cap",lvl:9,when:"Rich + healthy: Lvl 9 adds Illaoi → Illbeats 2 + Frontman 2 (tft.ninja's full board).",inst:[[2,5],[2,1]],
+   cells:[[0,1,"illaoi",2,[]],[0,2,"renekton",2,[]],[0,3,"zac",2,ZAC],[0,4,"taric",2,[]],[1,4,"graves",2,GRV],[3,0,"syndra",2,SYN],[3,1,"zoe",2,[]],[3,4,"yuumi",1,[]],[3,5,"taliyah",1,TAL]]}
+];
+//#endregion testable
+
+/* ---------------- helpers ---------------- */
+const $ = s => document.querySelector(s);
+const el = (tag, cls, html) => { const e=document.createElement(tag); if(cls) e.className=cls; if(html!=null) e.innerHTML=html; return e; };
+const traitPill = t => `<span class="pill">${T[t]?`<img class="tr" src="assets/traits/${T[t]}.svg" alt="">`:''}${t}</span>`;
+const itemIc = (k, cls="ic sm") => `<img class="${cls}" src="${itemImg(k)}" data-item="${k}" alt="${I[k][0]}">`;
+const compIc = (k, cls="ic sm") => `<img class="${cls}" src="${ci(k)}" data-comp="${k}" alt="${C[k].n}">`;
+const unitIc = (k, size=30) => `<img src="${sq(k)}" alt="${UK[k].n}" title="${UK[k].n}" style="width:${size}px;height:${size}px;border-radius:7px;border:2px solid var(--c${UK[k].c})">`;
+const uic = k => `<img class="uic" src="${sq(k)}" alt="" title="${UK[k].n}" style="border-color:var(--c${UK[k].c})">`;
+const icI = k => `<img class="uic" src="${itemImg(k)}" data-item="${k}" alt="" style="border-color:transparent">`;
+const icC = k => `<img class="uic" src="${ci(k)}" data-comp="${k}" alt="" style="border-color:transparent">`;
+const recHTML = k => `<div class="rec"><div class="eq">${compIc(I[k][2],"ic xs")}<span>+</span>${compIc(I[k][3],"ic xs")}</div><img class="ic" src="${itemImg(k)}" data-item="${k}" alt=""><div>${I[k][0]}</div></div>`;
+const eqText = k => `${C[I[k][2]].s} + ${C[I[k][3]].s} = <b>${I[k][0]}</b>`;
+const qLine = (k,bk) => `<div class="ql${bk?' bk':''}"><img src="${ci(I[k][2])}" data-comp="${I[k][2]}" alt="">${C[I[k][2]].s}<span class="o">+</span><img src="${ci(I[k][3])}" data-comp="${I[k][3]}" alt="">${C[I[k][3]].s}<span class="o">=</span><img src="${itemImg(k)}" data-item="${k}" alt=""><span class="res">${I[k][0]}</span></div>`;
+const costChip = c => `<span class="cc b${c}">${c}g</span>`;
+
+/* ---------------- rules / unlocks / traits ---------------- */
+$("#r1").innerHTML = uic("graves")+uic("zac");
+$("#r2").innerHTML = icC("sword")+uic("graves")+icC("tear")+uic("taliyah");
+$("#r3").innerHTML = uic("ashe")+uic("zac")+uic("taliyah");
+$("#r4").innerHTML = `<img class="uic" src="assets/instruments/maracas.png" alt="" style="border-color:var(--gold)"><img class="uic" src="assets/instruments/ukelele.png" alt="" style="border-color:var(--gold)">`;
+const UNLOCKS = [
+  {k:"ashe",when:"Stage 2",what:`<b>Ashe:</b> a Beach Pop champion holding <b>${PATCH.unlock.asheItems} items</b>`,soon:"stage 2",aim:"by 2-5",how:"Slam your first 2 items on Taric or Renekton (or the same unit)",oops:"Spreading 1 item each over several units",why:"She holds Graves' AD items until he shows up"},
+  {k:"syndra",when:"Stage 2–3",what:"<b>Syndra:</b> field enough <b>unique star levels</b> across Beach Pop / Choreographer units",soon:"stage 2",aim:"stage 3",how:"2★ your Taric, Zoe, Renekton, Ashe: each upgraded unit counts",oops:"Selling Beach Pop pairs to fit stronger off-trait units",why:"Your AP carry until Taliyah"},
+  {k:"zac",when:"Lvl 7 · stage 4",what:`<b>Zac:</b> be <b>Lvl ${PATCH.unlock.zacLevel}</b> with <b>${PATCH.unlock.zacUnique} unique Beach Pop or Juggernaut</b> units on the board`,soon:"3-5",aim:"4-1",how:"Taric, Zoe, Renekton, Ashe, Syndra on the board when you hit Lvl 7",oops:"Two copies of one unit count once: they must be different",why:"Your main tank for the 4-2 roll-down"},
+  {k:"taliyah",when:"Lvl 8 · stage 4–5",what:"<b>Taliyah:</b> start a fight with a <b>1-, 2-, 3-, 4- and 5-cost</b> on Beach Pop hexes",soon:"4-2",aim:"stage 5",how:"Zoe (1), Ashe (2), Syndra (3), Graves (4) next to instruments + any 5-cost you hit",oops:"Forgetting the 5-cost: any one works, even one you'll sell",why:"AP carry upgrade + Encore 2 with Yuumi"}
+];
+$("#unlockList").innerHTML = UNLOCKS.map((x,i)=>`<li><span class="un">${i+1}</span>${uic(x.k)}<div><div class="small" style="color:var(--gold);font-weight:800;letter-spacing:.08em;text-transform:uppercase">${x.when}</div><div>${x.what}</div>
+  <div class="ux"><span>⏱ <b>Earliest</b> ${x.soon} · 🎯 <b>aim</b> ${x.aim}</span><span>✅ <b>How:</b> ${x.how}</span><span>⚠️ <b>Mistake:</b> ${x.oops}</span><span>💡 <b>Why:</b> ${x.why}</span></div></div></li>`).join("");
+const bp=PATCH.bp;
+$("#bpTrack").innerHTML = [3,5,7].map(n=>`<div class="bp${n===7?" hot":""}">${n===7?'<span class="tag pill p-gold">TARGET</span>':""}<div class="num">${n}</div>
+  <h3 style="margin:6px 0 4px">${bp[n].inst} instrument${bp[n].inst>1?"s":""}</h3><div class="small muted">${n<7?`Beach Pop units next to one: <b>+${bp[n].as}% Attack Speed</b>, <b>${bp[n].mana} Mana</b> every 3s`:`+ every ${bp[7].every}s an ocean breeze heals Beach Pop units <b>${bp[7].heal}%</b> and gives <b>${bp[7].breeze} Mana</b>`}</div></div>`).join("");
+$("#instRef").innerHTML = [3,5,7].map(n=>`<div><b class="n">${n}</b><b>${bp[n].inst} instrument${bp[n].inst>1?"s":""}</b><div class="small muted">${n<7?`+${bp[n].as}% AS · ${bp[n].mana} Mana / 3s`:`breeze: ${bp[7].heal}% heal + ${bp[7].breeze} Mana / ${bp[7].every}s`}</div></div>`).join("");
+$("#otherTraits").innerHTML = [
+  ["juggernaut","<b>Juggernaut 2</b> (Zac + Taric): Durability that grows as they lose Health"],
+  ["encore","<b>Encore 2</b> (Taliyah + Yuumi): abilities fire an extra, weaker projectile"],
+  ["frontman","<b>Frontman 2</b> (Renekton + Illaoi or Swain): team Health, more after the first cast"],
+  ["illbeats","<b>Illbeats 2</b> (Yuumi + Illaoi at 9): the Mixer gives stats you choose"],
+  ["choreographer","<b>Choreographer</b> (Syndra): front 2 rows get Shields, everyone else Damage Amp"],
+  ["renegade","<b>Renegade</b> (Graves): crit + Precision; 2 with Aurora"],
+  ["arcanist","<b>Arcanist 2</b> (Zoe + Swain): team AP, Arcanists more"]
+].map(([ic,t])=>`<li><span class="ics"><img class="uic tr" src="assets/traits/${ic}.svg" alt="" style="padding:4px"></span><span>${t}</span></li>`).join("");
+
+/* ---------------- unit cards ---------------- */
+function renderUnits(f="all"){
+  const g=$("#unitGrid"); g.innerHTML="";
+  U.filter(u=> f==="all" || u.tags.includes(f)).forEach(u=>{
+    const card=el("div","unit"); card.style.borderColor=`var(--c${u.c})`;
+    card.innerHTML=`
+      <div class="art"><img src="${sp(u.k)}" alt="${u.n}" loading="lazy">
+        <span class="cost b${u.c}">${u.c}-cost · ${u.c}g</span>
+        <div class="plans">${u.tags.includes("core")?`<span class="pill p-teal">${"★".repeat(u.star)}</span>`:''}${u.tags.includes("early")&&!u.tags.includes("core")?'<span class="pill">Early</span>':''}</div>
+        <div class="nm">${u.n}</div><img class="shop" src="${sq(u.k)}" alt="" title="Shop icon" style="border-color:var(--c${u.c})"></div>
+      <div class="body">
+        <div class="traits">${u.t.map(traitPill).join("")}</div>
+        <div class="role">${u.role}</div>
+        ${u.ab?`<div class="buff" style="border-left-color:var(--teal)"><b style="color:var(--teal)">${u.ab[0]} <span class="dim">· Mana ${u.ab[1]}</span></b>${u.ab[2]}</div>`:''}
+        ${u.unlock?`<div class="buff" style="border-left-color:var(--gold)"><b style="color:var(--gold)">🔓 Unlock</b>${u.unlock}</div>`:''}
+        ${u.items.length?`<div class="items"><span class="small muted">BIS:</span>${u.items.map(k=>itemIc(k)).join("")}</div>`:''}
+      </div>`;
+    g.appendChild(card);
+  });
+}
+document.querySelectorAll("#unitFilters .fbtn").forEach(b=>b.onclick=()=>{
+  document.querySelectorAll("#unitFilters .fbtn").forEach(x=>x.classList.remove("on")); b.classList.add("on"); renderUnits(b.dataset.f);
+});
+renderUnits();
+
+/* ---------------- timeline ---------------- */
+const TL = [
+  {st:"Stage 1–2",h:"Econ + unlocks",u:["taric","zoe","renekton","annie","ashe"],li:[
+    "Play your strongest board; <b>don't roll</b>",
+    "<b>2 items on one Beach Pop unit</b> → unlocks <b>Ashe</b>",
+    "2★ Beach Pop units → unique star levels unlock <b>Syndra</b>",
+    "Lvl 4 at 2-1, Lvl 5 at 2-5. Build to <b>50g</b> <a class=\"gr\" href=\"#g-income\">📚 Income</a>",
+    "Carousel: Belt, Gloves, JG or Rod (Mobalytics)"]},
+  {st:"Stage 3",h:"Lvl 6 · stabilize",u:["syndra","ashe","renekton","taric"],li:[
+    "<b>3-2: Lvl 6</b>. Beach Pop 5 = 2 instruments",
+    "<b>Syndra</b> carries AP items, <b>Ashe</b> holds AD items",
+    "Stay at <b>50g</b>; roll only if HP drops under 50",
+    "Lvl 7 at 3-5 if you're streaking with 50g+"]},
+  {st:"Stage 4",h:"Lvl 7 → 8 · roll down",u:["zac","graves","renekton","taric"],li:[
+    "<b>4-1: Lvl 7</b> with 5 unique Beach Pop / Juggernaut → <b>Zac</b>",
+    "<b>4-2: Lvl 8</b>, roll for 2★ Graves + 2★ Zac <a class=\"gr\" href=\"#g-level\">📚 Carry's level</a>",
+    "Sell Ashe / Annie: their items go back to your bench → Graves / Zac",
+    "Stop at ~10–20g once both are 2★"]},
+  {st:"Stage 5",h:"Taliyah · Lvl 9",u:["taliyah","yuumi","illaoi"],li:[
+    "Any 5-cost + your 1–4 costs on Beach Pop hexes → <b>Taliyah</b>",
+    "Taliyah replaces Ashe. Yuumi = Encore 2",
+    "Lvl 9 when rich: <b>Illaoi</b> → Illbeats 2 + Frontman 2"]}
+];
+const TIPS = [
+  [["graves","zac"],"<b>Fast 8:</b> Lvl 8 at 4-2, roll for 2★ Graves + 2★ Zac"],
+  [["ashe"],"<b>2 items on a Beach Pop unit</b> unlocks Ashe; she holds Graves' items until he shows up"],
+  [["zac"],"Zac needs <b>Lvl 7 + 5 different Beach Pop / Juggernaut</b> units on the board"],
+  [["taliyah"],"Taliyah: a <b>1-, 2-, 3-, 4- and 5-cost</b> starting on Beach Pop hexes"],
+  [["graves","taliyah"],"<b>Instruments go next to your carries</b>: attack speed + mana for Beach Pop units"],
+  [["syndra"],"<b>Syndra holds AP items</b> until Taliyah, then keeps them <a class=\"gr\" href=\"#g-dead\">📚 No dead parts</a>"],
+  [["annie"],"<b>Tank parts before Zac?</b> Annie holds them; sell her and the items come back"]
+];
+$("#tips").innerHTML = TIPS.map(([us,t])=>`<li><span class="ics">${us.map(uic).join("")}</span><span>${t}</span></li>`).join("");
+$("#tl").innerHTML = TL.map(s=>`<div class="stage"><div class="st">${s.st}</div><h4>${s.h}</h4><ul>${s.li.map(l=>`<li>${l}</li>`).join("")}</ul><div class="row">${s.u.map(k=>unitIc(k,34)).join("")}</div></div>`).join("");
+
+/* ---------------- carries ---------------- */
+const carryHTML = list => list.map(c=>{const u=UK[c.u];return `
+  <div class="carry"><img class="por" src="${sq(c.u)}" alt="${u.n}" style="border-color:var(--c${u.c})">
+    <div style="flex:1"><div style="display:flex;gap:10px;align-items:baseline;flex-wrap:wrap"><b style="font:800 17px Cinzel">${u.n}</b>${costChip(u.c)}<span class="pill ${c.cls}">${c.tag}</span></div>
+    <div class="recipes" style="margin-top:8px">${c.items.map(recHTML).join("")}${c.bk?`<div class="bkrec"><span class="bkl">Backup</span>${recHTML(c.bk)}</div>`:""}</div></div></div>`}).join("");
+$("#carries").innerHTML = carryHTML([
+  {u:"graves",tag:"AD carry · 2★ · preferred",cls:"p-teal",items:GRV,bk:"qss"},
+  {u:"taliyah",tag:"AP carry · late",cls:"p-red",items:TAL,bk:"morello"},
+  {u:"syndra",tag:"AP carry until Taliyah",cls:"p-red",items:SYN,bk:"shojin"},
+  {u:"zac",tag:"Tank · 2★",cls:"p-tank",items:ZAC,bk:"dclaw"},
+  {u:"ashe",tag:"Holds AD items early",cls:"",items:["bt","sterak"],bk:null},
+  {u:"annie",tag:"Holds tank parts early",cls:"p-tank",items:["gargoyle","warmog"],bk:null}
+]);
+
+/* ---------------- boards ---------------- */
+const INST_IMG = ["maracas","ukelele"];
+function renderBoard(id, cells, inst=[]){
+  const map={}; cells.forEach(c=>map[c[0]+"-"+c[1]]=c);
+  const im={}; inst.forEach(([r,c],i)=>im[r+"-"+c]=i);
+  let h=`<div class="board"><div class="lbl">▲ enemy side · front line</div>`;
+  for(let r=0;r<4;r++){
+    h+=`<div class="hrow ${r%2?'odd':''}">`;
+    for(let c=0;c<7;c++){
+      const x=map[r+"-"+c];
+      if(!x){ h+= (r+"-"+c) in im ? `<div class="cell"><span class="tip">Instrument</span><div class="hex inst"><img src="assets/instruments/${INST_IMG[im[r+"-"+c]%2]}.png" alt="Instrument"></div></div>` : `<div class="cell"><div class="hex"></div></div>`; continue; }
+      const u=UK[x[2]];
+      h+=`<div class="cell"><span class="tip">${u.n}${x[4].length?" · "+x[4].map(k=>I[k][0]).join(", "):""}</span><div class="stars">${"★".repeat(x[3])}</div>
+        <div class="hex u" style="background:var(--c${u.c})"><img src="${sq(u.k)}" alt="${u.n}"></div>
+        <div class="its">${x[4].map(k=>`<img src="${itemImg(k)}" data-item="${k}" alt="">`).join("")}</div></div>`;
+    }
+    h+=`</div>`;
+  }
+  h+=`<div class="lbl" style="margin-top:12px">▼ back line · your bench side</div></div>`;
+  $(id).innerHTML=h;
+}
+$("#board8notes").innerHTML = `
+  <li><span class="ics">${uic("graves")}${uic("taliyah")}</span><span><b>One instrument between Graves and Taliyah</b>: both get attack speed + mana</span></li>
+  <li><span class="ics">${uic("syndra")}${uic("zoe")}</span><span>The other instrument by Syndra + Zoe in the far back corner, so one AoE can't hit both carries</span></li>
+  <li><span class="ics">${uic("yuumi")}</span><span><b>A 2★ 4-cost beats a small trait.</b> Only add a trait unit if it's as strong as the one it replaces</span></li>`;
+
+/* ---------------- item ranking ---------------- */
+const RANK = [["bt","graves"],["gargoyle","zac"],["sterak","graves"],["jg","syndra"],["titans","graves"],
+              ["warmog","zac"],["voidstaff","syndra"],["shojin","taliyah"],["visage","zac"],["rabadon","taliyah"]];
+const STAR = 5;
+const rankOf = k => { const i=RANK.findIndex(x=>x[0]===k); return i<0?0:i+1; };
+function renderRankList(){
+  $("#rankList").innerHTML=`<h3><span style="color:var(--teal)">Build priority</span></h3><ol>`+
+    RANK.map(([k,who],i)=>{const u=UK[who];return `<li class="${i<STAR?'star':''}" data-k="${k}"><span class="n">${i<STAR?'★':''}${i+1}</span><img src="${itemImg(k)}" data-item="${k}" alt=""><b>${I[k][0]}</b><img class="who" src="${sq(who)}" alt="${u.n}" title="${u.n}" style="border-color:var(--c${u.c})"><span class="rcp">${C[I[k][2]].s} + ${C[I[k][3]].s}</span></li>`}).join("")+`</ol>`;
+  $("#rankList").querySelectorAll("li").forEach(li=>li.onclick=()=>showItem(li.dataset.k));
+}
+
+/* ---------------- item grid ---------------- */
+let sel=null;
+const tagCls = t => t==="Z"?"P":t==="S"?"B":t==="T"?"T":t==="ZS"?"PB":"";
+function renderGrid(){
+  const g=$("#igrid"); g.innerHTML="";
+  g.appendChild(el("div",""));
+  CK.forEach(k=>{const h=el("div","h"+(sel===k?" on":""),`<img src="${ci(k)}" data-comp="${k}" alt="${C[k].n}">`);h.onclick=()=>{sel=sel===k?null:k;renderGrid();};g.appendChild(h);});
+  CK.forEach(r=>{
+    const h=el("div","h"+(sel===r?" on":""),`<img src="${ci(r)}" data-comp="${r}" alt="${C[r].n}">`);h.onclick=()=>{sel=sel===r?null:r;renderGrid();};g.appendChild(h);
+    CK.forEach(c=>{
+      const k=recipe[[r,c].sort().join("+")]; const tag=I[k][4]; const rk=rankOf(k);
+      const d=el("div","c "+tagCls(tag)+(sel&&r!==sel&&c!==sel?" dim":"")+(!rk&&!tag?" unranked":"")+(rk&&rk<=STAR?" top":""),`<img src="${itemImg(k)}" data-item="${k}" alt="${I[k][0]}">`);
+      if(rk) d.insertAdjacentHTML("beforeend",`<span class="rk ${rk<=STAR?'star':''}">${rk<=STAR?'★':''}${rk}</span>`);
+      d.onmouseenter=d.onclick=()=>showItem(k);
+      g.appendChild(d);
+    });
+  });
+}
+const tagLabel = t => ({Z:'<span class="pill p-teal">Graves · AD</span>',S:'<span class="pill p-red">Syndra / Taliyah · AP</span>',T:'<span class="pill p-tank">Zac · tank</span>',ZS:'<span class="pill p-teal">Graves</span> <span class="pill p-red">Syndra / Taliyah</span>'}[t]||'<span class="pill">Not core for this comp</span>');
+function showItem(k){
+  const [n,,a,b,t,d]=I[k];
+  $("#iinfo").innerHTML=`<div style="display:flex;gap:14px;align-items:center"><img src="${itemImg(k)}" style="width:72px;height:72px;border-radius:14px;border:2px solid var(--gold)" alt="">
+   <div><div style="font:800 20px Cinzel">${n}</div><div style="display:flex;align-items:center;gap:6px;margin-top:6px">${compIc(a)}<b class="dim">+</b>${compIc(b)}<span class="small muted">${C[a].n} + ${C[b].n}</span></div></div></div>
+   <p class="small" style="margin:12px 0 8px">${d}</p>${tagLabel(t)}${rankOf(k)?` <span class="pill p-gold">${rankOf(k)<=STAR?'★ ':''}#${rankOf(k)}</span>`:''}`;
+}
+renderGrid(); renderRankList(); showItem("bt");
+
+/* ---------------- hover / tap tooltips ---------------- */
+const tip = el("div","itip"); tip.setAttribute("role","tooltip"); document.body.appendChild(tip);
+const holders = k => U.filter(u=>u.items.includes(k));
+const mini = k => `<img src="${sq(k)}" alt="" style="border-color:var(--c${UK[k].c})">`;
+function tipFor(t){
+  if(t.dataset.item){
+    const k=t.dataset.item, [n,,a,b,,d]=I[k], rk=rankOf(k), hs=holders(k);
+    return `<div class="th"><img src="${itemImg(k)}" alt=""><div><b>${n}</b><div class="rc"><img src="${ci(a)}" alt="">${C[a].s} + <img src="${ci(b)}" alt="">${C[b].s}</div></div></div>
+      <div>${d}</div>${rk?`<div style="margin-top:6px"><span class="pill p-gold">${rk<=STAR?'★ ':''}#${rk} priority</span></div>`:''}
+      ${hs.length?`<div class="who">Goes on ${hs.map(u=>mini(u.k)+u.n).join(" · ")}</div>`:''}`;
+  }
+  const k=t.dataset.comp, its=RANK.map(r=>r[0]).filter(i=>I[i][2]===k||I[i][3]===k).slice(0,4);
+  return `<div class="th"><img src="${ci(k)}" alt=""><div><b>${C[k].n}</b><div class="rc">Component</div></div></div>
+    ${its.length?`<div class="small muted">Builds into (this comp):</div>`+its.map(i=>{const o=I[i][2]===k?I[i][3]:I[i][2];return `<div class="bi">+ <img src="${ci(o)}" alt="">${C[o].s} = <img src="${itemImg(i)}" alt=""><b>${I[i][0]}</b></div>`}).join(""):''}`;
+}
+let tipEl=null;
+function showTip(t){
+  tipEl=t; tip.innerHTML=tipFor(t); tip.classList.add("on");
+  const r=t.getBoundingClientRect(), w=tip.offsetWidth, h=tip.offsetHeight, m=8;
+  let x=Math.min(Math.max(m, r.left+r.width/2-w/2), innerWidth-w-m);
+  let y=r.top-h-10; if(y<m) y=Math.min(r.bottom+10, innerHeight-h-m);
+  tip.style.left=x+"px"; tip.style.top=y+"px";
+}
+function hideTip(){ tipEl=null; tip.classList.remove("on"); }
+const TIPSEL="[data-item],[data-comp]";
+document.addEventListener("pointerover",e=>{ if(e.pointerType==="touch") return; const t=e.target.closest(TIPSEL); if(t){ if(t!==tipEl) showTip(t); } else if(tipEl) hideTip(); });
+document.addEventListener("click",e=>{ const t=e.target.closest(TIPSEL); if(t&&matchMedia("(hover: none)").matches){ t===tipEl?hideTip():showTip(t); } else if(!t) hideTip(); }, true);
+addEventListener("scroll",()=>{ if(tipEl) hideTip(); },{passive:true});
+
+/* ---------------- advisor ---------------- */
+const bench = Object.fromEntries(CK.map(k=>[k,0]));
+const PRIO = {
+  A:[["bt","graves"],["gargoyle","zac"],["sterak","graves"],["jg","syndra"],["titans","graves"],["warmog","zac"],["voidstaff","syndra"],["shojin","taliyah"],
+     ["visage","zac"],["rabadon","taliyah"],["bluebuff","syndra"],["jg","taliyah"],["qss","graves"],["hoj","graves"],["dclaw","zac"],["bramble","zac"],
+     ["morello","taliyah"],["evenshroud","zac"],["thief","ashe"]]
+};
+let carryMode = store.get("carry")||"auto";
+function prioList(){
+  const ap = carryMode==="ap" || (carryMode==="auto" && bench.tear>0);
+  if(!ap) return PRIO.A;
+  const first=PRIO.A.filter(([k,w])=>(w==="syndra"||w==="taliyah")&&k!=="morello");
+  return [...first, ...PRIO.A.filter(x=>!first.includes(x))];
+}
+/* hide recommendations: built (item already on that unit), skip (don't want the item), full (unit has no slots) */
+const HID = (()=>{ try{ const o=JSON.parse(store.get("hide")||"{}"); return {built:new Set(o.built||[]),skip:new Set(o.skip||[]),full:new Set(o.full||[])}; }catch(e){ return {built:new Set(),skip:new Set(),full:new Set()}; } })();
+const saveHID = () => store.set("hide", JSON.stringify({built:[...HID.built],skip:[...HID.skip],full:[...HID.full]}));
+const builtOn = who => [...HID.built].filter(x=>x.endsWith("|"+who)).length;
+const isFull = who => HID.full.has(who) || builtOn(who)>=3;
+const allowed = (k,who) => !HID.skip.has(k) && !HID.built.has(k+"|"+who) && !isFull(who);
+function hideBar(){
+  const chip=(type,key,label)=>`<button class="hchip" data-t="${type}" data-x="${key}" title="Show again">${label} <span>✕</span></button>`;
+  const autoFull=[...new Set([...HID.built].map(x=>x.split("|")[1]))].filter(w=>!HID.full.has(w)&&builtOn(w)>=3);
+  const c=[...[...HID.built].map(x=>{const [k,w]=x.split("|");return chip("built",x,`✓ ${I[k][0]} on ${UK[w].n}`)}),
+    ...[...HID.skip].map(k=>chip("skip",k,`🚫 ${I[k][0]}`)),
+    ...[...HID.full].map(w=>chip("full",w,`🔒 ${UK[w].n} full`)),
+    ...autoFull.map(w=>`<span class="hchip auto">🔒 ${UK[w].n} has 3 items</span>`)];
+  return c.length?`<div class="hbar"><span class="small muted">Hidden:</span>${c.join("")}<button class="hchip clr" data-t="all">Show all</button></div>`:"";
+}
+const hideMenu = (k,who) => `<div class="hmenu"><button data-h="built" data-k="${k}" data-w="${who}">✓ Already built</button><button data-h="skip" data-k="${k}" data-w="${who}">🚫 Don't want ${I[k][0]}</button><button data-h="full" data-k="${k}" data-w="${who}">🔒 ${UK[who].n} is full</button></div>`;
+$("#builds").addEventListener("click",e=>{
+  const x=e.target.closest(".hx"); if(x){ const row=x.closest(".build"); const open=row.nextElementSibling&&row.nextElementSibling.classList.contains("hmenu");
+    $("#builds").querySelectorAll(".hmenu").forEach(m=>m.remove()); if(!open) row.insertAdjacentHTML("afterend",hideMenu(x.dataset.k,x.dataset.w)); return; }
+  const h=e.target.closest("[data-h]"); if(h){ const {h:t,k,w}=h.dataset; if(t==="built") HID.built.add(k+"|"+w); else if(t==="skip") HID.skip.add(k); else HID.full.add(w); saveHID(); advise(); return; }
+  const c=e.target.closest(".hchip[data-t]"); if(c){ const t=c.dataset.t; if(t==="all"){HID.built.clear();HID.skip.clear();HID.full.clear();} else HID[t].delete(c.dataset.x); saveHID(); advise(); }
+});
+function renderBench(){
+  $("#bench").innerHTML = CK.map(k=>`<div class="cbtn ${bench[k]?'has':''}"><img src="${ci(k)}" data-comp="${k}" alt=""><div class="nm">${C[k].n}</div>
+    <div class="ctl"><button data-k="${k}" data-d="-1">−</button><span class="cnt">${bench[k]}</span><button data-k="${k}" data-d="1">+</button></div></div>`).join("");
+  $("#bench").querySelectorAll("button").forEach(b=>b.onclick=()=>{const k=b.dataset.k;bench[k]=Math.max(0,Math.min(9,bench[k]+ +b.dataset.d));renderBench();advise();});
+}
+function advise(){
+  const total=CK.reduce((s,k)=>s+bench[k],0);
+  if(!total){ $("#builds").innerHTML=`<div class="small muted">Use + / − on the left.</div>`+hideBar(); return; }
+  const pool={...bench}; const out=[];
+  for(const [k,who] of prioList()){ if(!allowed(k,who)) continue; const [ , ,a,b]=I[k]; if(a===b? pool[a]>=2 : (pool[a]>=1&&pool[b]>=1)){ pool[a]--; pool[b]--; out.push([k,who]); } }
+  const left=CK.flatMap(k=>Array(pool[k]).fill(k));
+  let h=`<div class="small muted" style="margin:4px 0 8px">${out.length?'Build these, in this order <span class="dim">(✕ to hide one)</span>:':'Nothing complete yet. Hold your components.'}</div>`;
+  h+=out.map(([k,who])=>`<div class="build"><div class="eq">${compIc(I[k][2],"ic xs")}+${compIc(I[k][3],"ic xs")}=</div><img class="ic sm" src="${itemImg(k)}" data-item="${k}" alt=""><b>${I[k][0]}</b>${rankOf(k)&&rankOf(k)<=STAR?'<span class="pill p-gold" style="font-size:10px">★</span>':''}<span class="who small muted" style="display:flex;align-items:center;gap:6px">→ <span class="nm">${UK[who].n}</span> ${unitIc(who,26)}</span><button class="hx" data-k="${k}" data-w="${who}" title="Hide this" aria-label="Hide this">✕</button></div>`).join("");
+  if(left.length) h+=`<div class="small muted" style="margin:14px 0 6px">Leftovers: hold them, and look for the missing piece:</div>`+[...new Set(left)].map(k=>{
+    const seen=new Set(), opts=prioList().filter(([it,who])=>{const r=I[it]; if(seen.has(it)||(r[2]!==k&&r[3]!==k)||!allowed(it,who)) return false; seen.add(it); return true;}).slice(0,3);
+    return `<div class="left"><div class="lh">${compIc(k,"ic sm")}<b>${C[k].n}${pool[k]>1?' ×'+pool[k]:''}</b><span class="small muted">needs one of:</span></div>`+opts.map(([it,who])=>{
+      const o=I[it][2]===k?I[it][3]:I[it][2];
+      return `<div class="build opt"><div class="eq">${compIc(k,"ic xs")}+</div><span class="need">${compIc(o,"ic xs")}<b>${C[o].s}</b></span><span class="eq">=</span>${itemIc(it,"ic sm")}<b>${I[it][0]}</b><span class="who small muted" style="display:flex;align-items:center;gap:6px">→ <span class="nm">${UK[who].n}</span> ${unitIc(who,22)}</span><button class="hx" data-k="${it}" data-w="${who}" title="Hide this" aria-label="Hide this">✕</button></div>`;}).join("")+`</div>`;}).join("");
+  $("#builds").innerHTML=h+hideBar();
+}
+$("#resetBench").onclick=()=>{CK.forEach(k=>bench[k]=0);renderBench();advise();};
+renderBench(); advise();
+document.querySelectorAll("[data-cm]").forEach(b=>b.classList.toggle("on",b.dataset.cm===(store.get("carry")||"auto")));
+
+
+/* ---------------- golden rules (general TFT) ---------------- */
+const em = e => `<span class="em">${e}</span>`;
+const GOLD = [
+  {h:"🛡️ Items",list:[
+    ["g-33",uic("zac")+uic("graves"),"<b>3 items on your tank + 3 on your carry</b> first. A frontliner isn't a tank: build a real one","Zac + Graves"],
+    ["g-slam",em("🔨"),"<b>Slam, don't greed.</b> 10% better isn't worth 10 HP. Items on the bench do nothing","the Item Advisor builds what you can make now"],
+    ["g-core",icI("bt")+icI("sterak"),"<b>1–2 items are core</b>, the 3rd is a flexible +1","Bloodthirster + Sterak's on Graves"],
+    ["g-split",icI("shojin")+icI("voidstaff"),"<b>Split beats double:</b> two different mana/shred items over two copies of one",""],
+    ["g-dead",em("🧩"),"<b>No dead components.</b> Stack spares on one holder; don't spread 1-item units","Ashe holds AD, Annie holds tank parts"],
+    ["g-crit",icI("jg"),"<b>Abilities only crit with JG</b> (or IE). Otherwise crit is wasted","why Syndra + Taliyah want JG"],
+    ["g-util",icI("morello")+icI("voidstaff"),"<b>Bring utility:</b> anti-heal (Morello, Red Buff, Sunfire) + one shred. Shreds don't stack","Void Staff on Syndra, Morello if they heal"],
+    ["g-duo",uic("graves")+uic("taliyah"),"<b>Two carries late</b>, not two tanks","Graves + Taliyah (Syndra until then)"],
+    ["g-car",em("🎠"),"<b>Carousel: item over unit.</b> Plan A › B › C, else take a flexible part (Gloves)",""]]},
+  {h:"🎲 Rolling + econ",list:[
+    ["g-level",em("🎯"),"<b>Roll on your carry's level:</b> 1-cost Lvl 4–5 · 2-cost 6 · 3-cost 7 · 4-cost 8","Lvl 8 roll-down for Graves + Zac"],
+    ["g-weak",em("💤"),"<b>Don't level if it won't make you strong.</b> Bank the gold instead","Lvl 6 at 3-2 adds a Beach Pop unit; skip it only if you have none"],
+    ["g-50",em("💰"),"<b>Slow roll = only roll the gold above 50</b>, so you keep max interest","you don't slow roll: sit at 50 and level instead"],
+    ["g-income",em("📈"),"<b>It's the money you make, not your bank.</b> A streak pays you back",""],
+    ["g-pairs",uic("taric")+uic("zoe")+uic("renekton"),"<b>Hold pairs.</b> Rolling for many units hits far more often than rolling for one","hold Beach Pop pairs, then 2★ them while leveling"],
+    ["g-urgent",em("❤️"),"<b>High HP, no streak = no rush.</b> One copy off a spike, or on a streak → roll",""],
+    ["g-pos",uic("zac"),"<b>Your main tank takes the first hits.</b> Position for your scariest opponent",""],
+    ["g-tilt",em("🧘"),"<b>Ignore high-rollers and contests.</b> Play your best line",""]]},
+  {h:"🎢 Tempo",list:[
+    ["g-above",em("📊"),"<b>Be stronger than the lobby for half the game.</b> Reroll boards peak in stage 3; yours peaks at 4-2","survive stage 3 with 2★ Beach Pop units"],
+    ["g-spike",em("⚡"),"<b>Hit your upgrades on the spike round and slam every item.</b> Upgrades with no items don't win","Lvl 8 roll-down, items on Graves right away"],
+    ["g-streak",em("🔥"),"<b>Spent big? Win-streak it back. Weak? Lose all the way.</b> HP is gold",""],
+    ["g-cap",em("🎯"),"<b>Know your cap.</b> Behind → spend at 8 and steal fights. Ahead + rich → push 9","Illaoi at 9"]]}
+];
+$("#grules").innerHTML = GOLD.map(g=>`<div><h3>${g.h}</h3><ul class="bul tight">${g.list.map(([id,ic,t,here])=>
+  `<li id="${id}"><span class="ics">${ic}</span><span>${t}${here?`<span class="here">↳ Here: ${here}</span>`:""}</span></li>`).join("")}</ul></div>`).join("");
+
+
+/* ---------------- shared: Do / Why ---------------- */
+const dw = (d,why,tone="") => `<div class="dw ${tone}"><div class="d"><span class="lb">Do</span>${d}</div><div class="w"><span class="lb">Why</span>${why}</div></div>`;
+const segHTML = (name,opts,cur) => `<div class="seg" data-name="${name}">${opts.map(([v,l])=>`<button type="button" data-v="${v}" class="${String(v)===String(cur)?'on':''}">${l}</button>`).join("")}</div>`;
+const loadJ = (k,d) => { try{ return Object.assign({},d,JSON.parse(store.get(k)||"{}")); }catch(e){ return {...d}; } };
+
+/* ---------------- instruments (numbers from PATCH.bp) ---------------- */
+function renderInst(){
+  const b=PATCH.bp;
+  $("#instLearn").innerHTML = `Everyone next to an instrument regenerates <b>${b.regen[0]}% Health every ${b.regen[1]}s</b>. Beach Pop units there also get <b>+${b[3].as}% / +${b[5].as}% Attack Speed</b> and <b>${b[3].mana} / ${b[5].mana} Mana</b> every 3s at Beach Pop 3 / 5`;
+}
+
+/* ---------------- game plan: checkpoints + recovery ---------------- */
+const CP = [
+  {r:"3-2",h:"Lvl 6 · stabilize",chk:"HP · streak · items · Ashe + Syndra unlocked?",
+   roll:"HP under 50 → roll to ~30g for 2★ Taric / Renekton / Zoe / Ashe",lvl:"Lvl 6 now (2 instruments at Beach Pop 5)",save:"Winning or HP 70+ → back to 50g and hold",sos:"HP under 40 → roll to ~10g, play every 2★"},
+  {r:"4-1",h:"Lvl 7 · Zac",chk:"5 different Beach Pop / Juggernaut on the board? · gold for 4-2",
+   roll:"Only if HP is under 40",lvl:"Lvl 7 now (3-5 if streaking with 50g+)",save:"Keep 50g for the 4-2 roll-down",sos:"HP under 30 → roll at 7 for 2★ Graves / Zac"},
+  {r:"4-2",h:"Lvl 8 roll-down",chk:"Gold · Graves + Zac copies · anyone else on them?",
+   roll:"Roll for 2★ Graves + 2★ Zac; stop at ~10–20g once both are 2★",lvl:"Lvl 8 now",save:"Both already 2★? Keep 30g+ and rebuild interest",sos:"HP under 30 → spend everything"},
+  {r:"5-1",h:"Taliyah + cap",chk:"Taliyah unlocked? · HP · gold",
+   roll:"At 8, once back over 50g: Taliyah / 2★ Syndra",lvl:"HP 50+ and 50g+ → Lvl 9 (Illaoi)",save:"Strong and healthy → econ for Lvl 9",sos:"HP under 30 → roll at 8"}
+];
+const RECOV = [
+  ["🩸 Bleeding early (HP under 60 at 3-2)","Lvl 6, roll to ~30g for 2★ Beach Pop 1–2 costs, then rebuild to 50","Fast 8 only works if you reach 4-2 alive. A weak stage 3 costs more HP than the gold saves."],
+  ["⚔️ Graves contested","Roll at 8 anyway. No 2★? AD items stay on Ashe; Syndra + Taliyah carry",`Only ${PATCH.pool[4][0]} copies of each 4-cost. Two players need 6 of them for 2★.`],
+  ["🧱 No Zac yet","Annie / Renekton hold the tank items; get 5 different Beach Pop / Juggernaut on the board at Lvl 7","Zac's unlock counts different units, not copies."],
+  ["🌊 No Taliyah by 5-1","Ashe stays the 7th Beach Pop, Syndra keeps the AP items. Put any 5-cost next to an instrument","Taliyah needs a 1-to-5-cost line-up on Beach Pop hexes."],
+  ["🎯 No AD items","Everything AP on Syndra, later Taliyah; Graves plays as a 2★ body","Split items beat a half-built second carry."],
+  ["💥 Front line melts at 8","Gargoyle on Zac first; Swain for Yuumi (Frontman 2)","Carries can't deal damage if the front line dies in 5 seconds."]
+];
+function renderCP(){
+  const row=(ic,lb,t)=>`<li><span class="ci">${ic}</span><span><b>${lb}</b> ${t}</span></li>`;
+  $("#cps").innerHTML = CP.map(c=>`<div class="cpc"><div class="cph"><span class="r">${c.r}</span><b>${c.h}</b></div><ul>
+    ${row("👀","Check","<span class=\"muted\">"+c.chk+"</span>")}${row("🎲","Roll if",c.roll)}${row("⬆️","Level if",c.lvl)}${row("💰","Save if",c.save)}${row("🚨","Emergency",c.sos)}</ul></div>`).join("");
+  $("#recov").innerHTML = RECOV.map(([h,d,w])=>`<div class="rv1"><div class="rvh">${h}</div>${dw(d,w)}</div>`).join("");
+}
+
+/* ---------------- final board variants ---------------- */
+function traitRow(keys){
+  return traitCount(keys).map(x=>`<span class="pill ${x.on?'p-gold':'off'}">${T[x.t]?`<img class="tr" src="assets/traits/${T[x.t]}.svg" alt="">`:""}${x.t} ${x.on?x.c:`${x.c}/${x.next||"?"}`}</span>`).join("");
+}
+let bvCur = store.get("bv")||"std";
+function renderBV(){
+  if(!BV.find(b=>b.id===bvCur)) bvCur="std";
+  const b=BV.find(x=>x.id===bvCur);
+  $("#bvTabs").innerHTML = BV.map(x=>`<button type="button" class="fbtn ${x.id===bvCur?'on':''}" data-bv="${x.id}">${x.n} · ${x.lvl}</button>`).join("");
+  renderBoard("#board8",b.cells,b.inst);
+  $("#bvWhen").innerHTML = `<b>When:</b> ${b.when}`;
+  $("#bvTraits").innerHTML = traitRow(b.cells.map(c=>c[2]));
+  const e=empowered(b.cells,b.inst);
+  $("#bvEmp").innerHTML = `<span class="muted">🎵 Next to an instrument:</span>${e.all.map(k=>`<img class="uic" src="${sq(k)}" alt="${UK[k].n}" title="${UK[k].n}${e.bp.includes(k)?" · +Attack Speed + Mana":""}" style="border-color:var(--c${UK[k].c})">`).join("")}`;
+}
+
+/* ---------------- advisor extras: main carry + what am I missing ---------------- */
+const MISS = {
+  front:["🛡️ Frontline dies fast",[["gargoyle","Gargoyle on Zac first: more resists the more enemies hit him"],["warmog","Warmog's: Zac's cast heals, more Health = bigger heal"],["bramble","vs AD carries: Bramble Vest"],["dclaw","vs AP carries: Dragon's Claw"],[null,"Swain for Yuumi (Frontman 2). Syndra's Choreographer shields your front 2 rows"]]],
+  dmg:["💥 Carries lack damage",[["bt","Bloodthirster first on Graves: he keeps fighting instead of dying"],["titans","Titan's: stacks AD in long fights"],["jg","JG: Syndra's and Taliyah's abilities can crit"],[null,"Is Graves next to an instrument? +Attack Speed for free"]]],
+  mana:["🔁 Not casting enough",[["shojin","Shojin on Taliyah: attacks give Mana"],["bluebuff","Blue Buff on Syndra"],[null,"Beach Pop units next to an instrument gain Mana every 3s. Beach Pop 7: a 40-Mana breeze every 10s"]]],
+  tanky:["🧱 Enemy front too tanky",[["voidstaff","Void Staff on Syndra: MR shred (one is enough)"],["titans","Titan's on Graves: keeps scaling in long fights"],[null,"Yuumi's discs shred MR too; Taliyah's surf hits max Health"]]],
+  heal:["🩸 Enemy healing",[["morello","Morellonomicon on Taliyah (Wound)"],["sunfire","Sunfire Cape on Zac or Renekton"],["redbuff","Red Buff from a spare Bow pair"]]],
+  left:["🧩 Awkward leftovers",[["qss","Cloak + Gloves → Quicksilver on Graves"],["hoj","Tear + Gloves → Hand of Justice on Graves"],["visage","Tear + Belt → Spirit Visage on Zac"],[null,"Spare AD parts: Ashe holds them. Spare tank parts: Annie holds them"]]]
+};
+let missCur = store.get("miss")||"";
+function renderMiss(){
+  $("#missChips").innerHTML = Object.entries(MISS).map(([k,[l]])=>`<button type="button" class="fbtn ${k===missCur?'on':''}" data-m="${k}">${l}</button>`).join("");
+  $("#missOut").innerHTML = missCur ? `<ol class="miss">${MISS[missCur][1].map(([it,t])=>`<li>${it?itemIc(it,"ic sm"):'<span class="em">💡</span>'}<span>${t}</span></li>`).join("")}</ol>` : "";
+}
+
+/* ---------------- augments by stage ---------------- */
+const CAT = {econ:["💰 Econ / reroll","p-gold"],combat:["⚔️ Combat","p-teal"],front:["🛡️ Frontline","p-tank"],carry:["💥 Carry","p-red"],scale:["📈 Scaling",""],risk:["⚠️ Conditional",""]};
+const AUGS = {
+  "2-1":{note:"Fast 8 wants XP and gold early. Take combat instead if you're already bleeding.",list:[
+    ["Level Up!","levelup3","Prismatic","econ","Buying XP gives extra XP, plus XP now","Exactly what fast 8 does every round",""],
+    ["Upward Mobility","upwardmobility_iii","Prismatic","econ","XP costs less; Health + rerolls on every level up","Cheaper levels and free rolls at 8",""],
+    ["Beach Pop Crown","../traits/beachpop.svg","Prismatic","carry","Beach Pop Emblem + Blue Buff + Syndra","Free Syndra with her Blue Buff; the Emblem frees a slot at 7",""],
+    ["Beach Pop Circlet","../traits/beachpop.svg","Prismatic","carry","Beach Pop Emblem + Sparring Gloves + Graves","A free Graves for the 4-2 roll-down",""],
+    ["Unearthed Treasure","../traits/beachpop.svg","Prismatic","scale","Empowered Beach Pop units can dig up loot after combat + Taric, Zoe, Renekton now","Loot every round from units you play anyway","Not on Beach Pop yet"],
+    ["Portable Forge","portableforge2","Gold","carry","Choose 1 of 4 Artifacts","Blitz's top augment for this comp",""],
+    ["Clear Mind","clearmind2","Gold","econ","XP after combat if your bench is empty","Fast 8 keeps a small bench anyway","You're holding pairs for 2★s"],
+    ["Silver Spoon","silver-spoon-i","Silver","econ","XP now","A head start toward 8",""],
+    ["Late Game Specialist","late-game-specialist-i","Silver","econ","Gold each time you reach a level","Pays you for leveling on schedule","You need combat now"]]},
+  "3-2":{note:"Pick what your board lacks: frontline if HP is under 60, stats or XP if you're healthy.",list:[
+    ["Tons of Stats!","tons-of-stats-ii","Gold","combat","Health, AD, AP, Armor, MR, Attack Speed, Mana","Every unit gets better, right now",""],
+    ["Bodyguard Training","bodyguardstraining_ii","Gold","front","Armor + MR, more each player level","Scales with exactly what you do: levels",""],
+    ["Knowledge Download II","knowledge-download-ii","Gold","econ","XP now","Lvl 7 / 8 a round earlier","HP under 50"],
+    ["Cybernetic Implants","cybernetic2","Gold","combat","Item holders gain Health + AD; a B.F. Sword","Graves' Sword items + bulk for every holder",""],
+    ["Cybernetic Uplink","cybernetic-uplink-ii","Gold","carry","Item holders gain Health + Mana Regen; a Tear","Tear → Syndra / Taliyah, faster casts",""],
+    ["Solo Plate","soloplate_ii","Gold","front","A Gargoyle Stoneplate","Zac's #1 item for free","The bonus Health needs the holder alone in its row"],
+    ["Tank Apprentice","tank-apprentice","Silver","front","A Giant's Belt now + a Negatron Cloak after combat","Free tank parts for Zac","Short on damage instead"]]},
+  "4-2":{note:"Late augments should win fights now. Skip econ unless you're very healthy.",list:[
+    ["Tons of Stats!","tons-of-stats-ii","Gold","combat","Every stat for the whole team","Safe, immediate power",""],
+    ["Ascension","ascension2","Gold","scale","Team Damage Amp after a delay in combat","Long fights vs tanky boards","Fights you lose in the first seconds"],
+    ["Giant and Mighty","giantandmighty_iii","Prismatic","front","Team gains Health and max Health","Front line and carries both survive",""],
+    ["Celestial Blessing III","celestialblessing3","Prismatic","combat","Team Omnivamp; overheal turns into a shield","Graves + Zac heal off it, Beach Pop regen stacks",""],
+    ["Living Forge","living-forge-iii","Prismatic","carry","An Artifact Anvil now and again later","Artifacts for both carries",""],
+    ["Baron's Lair","thebaronslair_iii","Prismatic","scale","A random tank item + AD/AP ramp after a delay","Free Zac item and late scaling",""],
+    ["Hedge Fund","hedge-fund","Prismatic","risk","Gold + max interest goes to 10","Only if HP 60+: funds Lvl 9","Usually at 4-2: gold now beats interest later"]]}
+};
+let augCur = store.get("aug")||"2-1";
+function renderAug(){
+  if(!AUGS[augCur]) augCur="2-1";
+  const g=AUGS[augCur];
+  $("#augTabs").innerHTML = Object.keys(AUGS).map(k=>`<button type="button" class="fbtn ${k===augCur?'on':''}" data-a="${k}">${k}</button>`).join("");
+  $("#augNote").textContent = g.note;
+  $("#augGrid").innerHTML = g.list.map(([n,ic,tier,cat,d,why,avoid])=>{ const isT=ic.includes("traits");
+    return `<div class="aug2"><img class="${isT?'tr':''}" src="assets/augments/${ic.includes('.svg')?ic:ic+'.png'}" alt="" loading="lazy" ${isT?'style="padding:7px;background:#2a1a3a"':''}>
+    <div class="t"><div class="hd"><b>${n}</b><span class="pill t-${tier.toLowerCase()}">${tier}</span><span class="pill ${CAT[cat][1]}">${CAT[cat][0]}</span></div><span class="d">${d}</span>
+    <div class="ya"><span>✅ <b>Take:</b> ${why}</span>${avoid?`<span>⛔ <b>Avoid:</b> ${avoid}</span>`:""}</div></div></div>`; }).join("");
+}
+
+/* ---------------- positioning by matchup ---------------- */
+const SB = BV.find(b=>b.id==="std").cells;
+const mv = (cells,moves) => cells.map(c=>moves[c[2]]?[...moves[c[2]].slice(0,2),c[2],c[3],moves[c[2]][2]||c[4]]:c);
+const MU = [
+  {id:"std",n:"🏖️ Default",threat:"Nothing special: play the standard board",tank:"Zac center, Renekton + Taric beside him",carry:"Graves 2nd row by an instrument, Taliyah + Syndra in opposite back corners",spread:"Normal",scout:"Where their carry sits; put Graves on that side",inst:[[2,5],[2,1]],cells:SB},
+  {id:"dive",n:"🗡️ Backline dive",threat:"Assassins or jumpers landing on your corner carry",tank:"Renekton drops back next to Taliyah as a bodyguard",carry:"Taliyah one hex in from the corner; Yuumi in the corner as bait",spread:"Keep Syndra and Taliyah far apart",scout:"Which side their divers jump to (usually the far corner)",inst:[[2,4],[2,1]],
+   cells:mv(SB,{taliyah:[3,4],yuumi:[3,6],renekton:[2,5]})},
+  {id:"aoe",n:"💣 Big AoE",threat:"Mage or bomb ultimates hitting clumps",tank:"Spread the front line one hex apart",carry:"Corners; only instrument buddies touch",spread:"Max spread: no two units touching except at instruments",scout:"Where their AoE carry aims (usually the biggest clump)",inst:[[2,5],[2,1]],
+   cells:mv(SB,{renekton:[0,1],taric:[0,5],yuumi:[3,3]})},
+  {id:"tanky",n:"🧱 Heavy frontline",threat:"Long fights; your damage can't break their tanks",tank:"Zac center with Renekton + Taric so he isn't focused alone",carry:"Graves, Syndra + Taliyah on the same side to focus one target",spread:"Less: focus fire matters more than splash",scout:"Their tank items. Void Staff on Syndra, Yuumi shreds MR",inst:[[2,5],[2,3]],
+   cells:mv(SB,{syndra:[3,3],zoe:[3,0]})},
+  {id:"ad",n:"🏹 Strong AD carry",threat:"Physical damage shredding your front line",tank:"Zac in front of their carry's lane; Bramble Vest with a spare Vest",carry:"Opposite corner from their carry",spread:"Normal",scout:"Their carry's corner + items (Last Whisper = armor shred)",inst:[[2,5],[2,1]],
+   cells:mv(SB,{zac:[0,3,["gargoyle","warmog","bramble"]]})},
+  {id:"ap",n:"🔮 Strong AP carry",threat:"Magic burst on your back line",tank:"Zac with Dragon's Claw if you have a spare Cloak",carry:"Out of their carry's lane",spread:"Yes: AP carries usually splash",scout:"Their AP carry's range and target pattern",inst:[[2,5],[2,1]],
+   cells:mv(SB,{zac:[0,3,["gargoyle","warmog","dclaw"]]})}
+];
+let muCur = store.get("mu")||"std";
+function renderMU(){
+  if(!MU.find(m=>m.id===muCur)) muCur="std";
+  const m=MU.find(x=>x.id===muCur);
+  $("#muTabs").innerHTML = MU.map(x=>`<button type="button" class="fbtn ${x.id===muCur?'on':''}" data-mu="${x.id}">${x.n}</button>`).join("");
+  renderBoard("#muBoard",m.cells,m.inst);
+  $("#muNotes").innerHTML = [["⚠️","Threat",m.threat],["🛡️","Main tank",m.tank],["🎯","Carries",m.carry],["↔️","Spread?",m.spread],["👀","Scout",m.scout]]
+    .map(([i,l,t])=>`<li><span class="ci">${i}</span><span><b>${l}:</b> ${t}</span></li>`).join("");
+}
+
+/* ---------------- learn: odds table + copy finder ---------------- */
+function renderLearn(){
+  $("#oddsTbl").innerHTML = `<tr><th>Lvl</th>${[1,2,3,4,5].map(c=>`<th><span class="cc b${c}">${c}g</span></th>`).join("")}</tr>`+
+    Object.entries(PATCH.odds).map(([l,o])=>`<tr class="${l==8?'hl':''}"><td><b>${l}</b></td>${o.map((v,i)=>`<td class="${(i===3&&l==8)||(i===4&&l==9)?'best':''}">${v?v+"%":"–"}</td>`).join("")}</tr>`).join("");
+  $("#oddsSum").textContent = `· 4-costs: ${PATCH.odds[8][3]}% at Lvl 8, ${PATCH.odds[7][3]}% at 7`;
+  $("#poolNote").innerHTML = `A 2★ 4-cost needs <b>3 copies</b> of ${PATCH.pool[4][0]}. Two players on Graves need 6.`;
+  $("#lvl9Sum").textContent = `· 5-costs: ${PATCH.odds[9][4]}% at 9 vs ${PATCH.odds[8][4]}% at 8`;
+  $("#lvl9Odds").innerHTML = `5-cost odds go from <b>${PATCH.odds[8][4]}%</b> at Lvl 8 to <b>${PATCH.odds[9][4]}%</b> at 9: much better for Taliyah, and a 9th unit (Illaoi)`;
+  $("#poolTbl").innerHTML = Object.entries(PATCH.pool).map(([c,[n,u]])=>`<span class="pill"><span class="cc b${c}">${c}g</span>${n} copies each · ${u} champs</span>`).join("");
+  const cf = loadJ("cf",{cost:4,level:8,own:1,seen:1,taken:20,target:3});
+  const ins=[["cost","Cost",1,5],["level","Your level",3,9],["target","Goal: 3 = 2★, 9 = 3★",3,9],["own","Copies you own",0,9],["seen","Copies on other boards",0,30],["taken","Other same-cost units bought (est.)",0,300]];
+  $("#cfForm").innerHTML = ins.map(([k,l,lo,hi])=>`<div class="fld"><label for="cf-${k}">${l}</label><input id="cf-${k}" type="number" min="${lo}" max="${hi}" value="${cf[k]}"></div>`).join("");
+  const run=()=>{ const r=copyOdds(cf);
+    $("#cfOut").innerHTML = r.need===0 ? `You already have ${r.goal}: done.` :
+      `${r.enough?"":`<b style="color:var(--red)">Only ${r.left} left in the pool, ${r.need} needed: it can't finish.</b> `}<b>${r.left}</b> left · need <b>${r.need}</b> · ~<b>${r.perShop.toFixed(2)}</b> per shop` +
+      (r.enough&&isFinite(r.gold)?` · ≈ <b>${Math.ceil(r.rolls)}</b> rolls (<b>${Math.ceil(r.gold)}g</b>) on average`:"") };
+  $("#cfForm").addEventListener("input",e=>{ const k=e.target.id.slice(3); const [, , lo,hi]=ins.find(x=>x[0]===k); cf[k]=Math.max(lo,Math.min(hi,+e.target.value||0)); store.set("cf",JSON.stringify(cf)); run(); });
+  run();
+}
+
+/* ---------------- match log ---------------- */
+const MISTAKES = ["Leveled late","Rolled too early","Rolled too late","Too greedy","Bad slams","Positioning","Instruments misplaced","Missed Zac unlock"];
+const LOG = (()=>{ try{ const a=JSON.parse(store.get("log")||"[]"); return Array.isArray(a)?a:[]; }catch(e){ return []; } })();
+const saveLog = () => store.set("log",JSON.stringify(LOG));
+let draft = {place:0,g:0,z:0,t:0,cont:"no",mist:[]};
+function logForm(){
+  const st=(key,u)=>`<div class="lst"><img src="${sq(u)}" alt="${UK[u].n}" title="${UK[u].n}" style="border-color:var(--c${UK[u].c})">${segHTML("d-"+key,[[1,"1★"],[2,"2★"],[3,"3★"]],draft[key])}</div>`;
+  $("#logForm").innerHTML = `
+    <div class="fld full"><span class="lb">Placement</span>${segHTML("d-place",[1,2,3,4,5,6,7,8].map(n=>[n,n]),draft.place)}</div>
+    <div class="fld"><label for="l-patch">Patch</label><input id="l-patch" list="patches" value="${store.get("lastPatch")||"PBE"}"><datalist id="patches"><option>PBE</option><option>19.1</option><option>19.2</option></datalist></div>
+    <div class="fld"><span class="lb">Contested?</span>${segHTML("d-cont",[["no","No"],["one","1"],["two","2+"]],draft.cont)}</div>
+    <div class="fld full"><span class="lb">Final stars</span><div class="lsts">${st("g","graves")}${st("z","zac")}${st("t","taliyah")}</div></div>
+    <details class="fld full"><summary>More details (optional)</summary><div class="form" style="margin-top:10px">
+      ${[["hp32","HP at 3-2"],["g32","Gold at 3-2"],["hp42","HP at 4-2"],["g42","Gold at 4-2"],["gst","Graves 2★ at (stage)"],["zac","Zac unlocked at"],["tal","Taliyah unlocked at"],["items","Main items"],["augs","Augments"]]
+        .map(([k,l])=>`<div class="fld${k==="items"||k==="augs"?" full":""}"><label for="l-${k}">${l}</label><input id="l-${k}"${/^(hp|g)\d/.test(k)?' type="number" min="0" max="300"':''}></div>`).join("")}
+    </div></details>
+    <div class="fld full"><span class="lb">Biggest mistake</span><div class="chips">${MISTAKES.map(m=>`<button type="button" class="hchip ${draft.mist.includes(m)?'on':''}" data-mist="${m}">${m}</button>`).join("")}</div></div>
+    <div class="fld"><label for="l-note">Note</label><input id="l-note" placeholder="what happened"></div>
+    <div class="fld"><label for="l-next">Fix next game</label><input id="l-next" placeholder="one thing"></div>
+    <div class="full btnrow"><button type="button" class="btn pri" id="logSave">Save game</button><span class="small muted" id="logMsg"></span></div>`;
+}
+function logStats(){
+  const n=LOG.length, avg=n?LOG.reduce((a,g)=>a+g.place,0)/n:0, t4=n?LOG.filter(g=>g.place<=4).length/n:0, w=LOG.filter(g=>g.place===1).length;
+  const byP={}; LOG.forEach(g=>{ (byP[g.patch]=byP[g.patch]||[]).push(g.place); });
+  const mc={}; LOG.forEach(g=>(g.mist||[]).forEach(m=>mc[m]=(mc[m]||0)+1));
+  const top=Object.entries(mc).sort((a,b)=>b[1]-a[1]).slice(0,3);
+  $("#logStats").innerHTML = !n ? `<div class="small muted">No games yet. Log your first one.</div>` : `
+    <div class="kpis"><div><b>${n}</b><span>games</span></div><div><b>${avg.toFixed(2)}</b><span>avg place</span></div><div><b>${Math.round(t4*100)}%</b><span>top 4</span></div><div><b>${w}</b><span>wins</span></div></div>
+    <div class="small" style="margin:10px 0 4px"><b>By patch:</b> ${Object.entries(byP).map(([p,a])=>`<span class="pill">${esc(p)} · ${a.length}g · ${(a.reduce((x,y)=>x+y,0)/a.length).toFixed(2)} avg · ${Math.round(a.filter(x=>x<=4).length/a.length*100)}% top 4</span>`).join(" ")}</div>
+    ${top.length?`<div class="small" style="margin:6px 0"><b>Most common mistakes:</b> ${top.map(([m,c])=>`<span class="pill p-red">${m} ×${c}</span>`).join(" ")}</div>`:""}
+    ${LOG[0]&&LOG[0].next?`<div class="small" style="margin:6px 0">🎯 <b>Focus now:</b> ${esc(LOG[0].next)}</div>`:""}
+    <div class="lrows">${LOG.slice(0,10).map((g,i)=>`<div class="lrow"><span class="pl p${g.place<=4?'t':'b'}">${g.place}</span><span class="small">${esc(g.date)} · ${esc(g.patch)}</span>
+      <span class="small muted">G${g.g||"?"}★ Z${g.z||"?"}★ T${g.t||"?"}★${g.mist&&g.mist.length?" · "+g.mist.join(", "):""}</span><button type="button" class="hx" data-del="${i}" aria-label="Delete game">✕</button></div>`).join("")}</div>`;
+}
+const esc = t => String(t==null?"":t).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const LOGF = ["date","patch","place","g","z","t","cont","hp32","g32","hp42","g42","gst","zac","tal","items","augs","mist","note","next"];
+function logWire(){
+  $("#log").addEventListener("click",e=>{
+    const sb=e.target.closest(".seg button"); if(sb&&sb.parentElement.dataset.name.startsWith("d-")){ const k=sb.parentElement.dataset.name.slice(2); draft[k]=k==="cont"?sb.dataset.v:+sb.dataset.v;
+      sb.parentElement.querySelectorAll("button").forEach(x=>x.classList.toggle("on",x===sb)); return; }
+    const mc=e.target.closest("[data-mist]"); if(mc){ const m=mc.dataset.mist; draft.mist=draft.mist.includes(m)?draft.mist.filter(x=>x!==m):[...draft.mist,m]; mc.classList.toggle("on"); return; }
+    const del=e.target.closest("[data-del]"); if(del){ LOG.splice(+del.dataset.del,1); saveLog(); logStats(); return; }
+    if(e.target.id==="logSave"){
+      if(!draft.place){ $("#logMsg").textContent="Pick a placement first."; return; }
+      const v=id=>{ const x=$("#l-"+id); return x?x.value.trim():""; };
+      const g={date:new Date().toISOString().slice(0,10),patch:v("patch")||"PBE",place:draft.place,g:draft.g,z:draft.z,t:draft.t,cont:draft.cont,mist:draft.mist};
+      ["hp32","g32","hp42","g42","gst","zac","tal","items","augs","note","next"].forEach(k=>{ const x=v(k); if(x) g[k]=/^(hp|g)\d/.test(k)?+x:x; });
+      LOG.unshift(g); saveLog(); store.set("lastPatch",g.patch);
+      draft={place:0,g:0,z:0,t:0,cont:"no",mist:[]}; logForm(); logStats(); $("#logMsg").textContent="Saved ✓"; setTimeout(()=>{ const m=$("#logMsg"); if(m) m.textContent=""; },1800);
+    }
+  });
+  const dl=(name,type,text)=>{ const a=document.createElement("a"); a.href=URL.createObjectURL(new Blob([text],{type})); a.download=name; document.body.appendChild(a); a.click(); setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove();},500); };
+  $("#logJson").onclick=()=>dl("beachpop-games.json","application/json",JSON.stringify(LOG,null,1));
+  $("#logCsv").onclick=()=>dl("beachpop-games.csv","text/csv",[LOGF.join(","),...LOG.map(g=>LOGF.map(f=>{ const x=Array.isArray(g[f])?g[f].join("; "):g[f]==null?"":String(g[f]); return /[",\n]/.test(x)?`"${x.replace(/"/g,'""')}"`:x; }).join(","))].join("\n"));
+  $("#logImp").onchange=e=>{ const f=e.target.files[0]; if(!f) return; f.text().then(t=>{ const a=JSON.parse(t); if(!Array.isArray(a)) throw 0;
+      const ok=a.filter(g=>g&&Number.isInteger(g.place)&&g.place>=1&&g.place<=8).map(g=>Object.fromEntries(LOGF.filter(k=>k in g).map(k=>[k,g[k]])));
+      const key=g=>JSON.stringify([g.date,g.patch,g.place,g.note]); const have=new Set(LOG.map(key)); let added=0;
+      ok.forEach(g=>{ if(!have.has(key(g))){ LOG.push(g); added++; } }); LOG.sort((x,y)=>String(y.date).localeCompare(String(x.date))); saveLog(); logStats(); $("#logMsg").textContent=`Imported ${added} game${added===1?"":"s"}`; })
+    .catch(()=>{ $("#logMsg").textContent="That file isn't a games export."; }); e.target.value=""; };
+}
+
+/* ---------------- boot new sections ---------------- */
+renderInst();
+renderCP(); renderBV(); renderMiss(); renderAug(); renderMU(); renderLearn(); logForm(); logStats(); logWire();
+document.addEventListener("click",e=>{
+  const b=e.target.closest("[data-bv],[data-m],[data-a],[data-mu],[data-cm]"); if(!b) return;
+  if(b.dataset.bv){ bvCur=b.dataset.bv; store.set("bv",bvCur); renderBV(); }
+  else if(b.dataset.m){ missCur=missCur===b.dataset.m?"":b.dataset.m; store.set("miss",missCur); renderMiss(); }
+  else if(b.dataset.a){ augCur=b.dataset.a; store.set("aug",augCur); renderAug(); }
+  else if(b.dataset.mu){ muCur=b.dataset.mu; store.set("mu",muCur); renderMU(); }
+  else if(b.dataset.cm){ carryMode=b.dataset.cm; store.set("carry",carryMode); document.querySelectorAll("[data-cm]").forEach(x=>x.classList.toggle("on",x===b)); advise(); }
+});
+
+$("#cupDo").innerHTML = `<h3 style="margin:18px 0 6px">Top Cut decisions</h3>` + [
+  ["Count the players you must outlast: you need 4 below you","Stage 4: if 4+ players are weaker (HP + board), protect HP. If fewer, spend now to get stronger."],
+  ["Roll at 3-2 if HP is under 60","Fast 8 has to reach 4-2 alive. Interest only matters if you survive to use it."],
+  ["Roll at 8 for a solid board before greeding Lvl 9","5th place and 8th place are the same result: out."],
+  ["Skip Hedge Fund-style econ augments after 3-2","Gold you never spend doesn't get you top 4."],
+  ["In the final, play for 1st","It's one game for prizes (1st 50 tickets, 2nd 35, 3rd–4th 22): a higher ceiling is worth some risk."]
+].map(([d,w])=>dw(d,w)).join("");
+
+/* ---------------- quick-ref dock ---------------- */
+const QR = [
+  {h:"AD → Graves",col:"var(--teal)",units:[["graves","2★ · 2nd row, next to an instrument",GRV,"qss"]]},
+  {h:"AP / Tear → Syndra · Taliyah",col:"var(--red)",units:[["syndra","2★ · back corner",SYN,null],["taliyah","late · other back corner",TAL,"morello"]]},
+  {h:"Tank",col:"var(--tank)",units:[["zac","2★ · Lvl 7 + 5 Beach Pop",ZAC,"dclaw"]]},
+  {h:"No items",col:"var(--muted)",fill:["taric","zoe","renekton","ashe","yuumi","illaoi","swain","annie","aurora"]}
+];
+function renderQR(){
+  $("#qrBody").innerHTML = QR.map(g=>{
+    let inner;
+    if(g.fill) inner=`<div class="qfill">${g.fill.map(k=>{const u=UK[k];return `<div><img src="${sq(k)}" alt="" style="border-color:var(--c${u.c})"><span>${u.n}</span>${costChip(u.c)}</div>`}).join("")}</div>`;
+    else inner=g.units.map(([k,why,its,bk])=>{const u=UK[k];return `<div class="qu"><div class="hd"><img src="${sq(k)}" alt="" style="border-color:var(--c${u.c})"><span class="n">${u.n}</span>${costChip(u.c)}<span class="why">${why}</span></div>${its.map(i=>qLine(i)).join("")}${bk?qLine(bk,true):""}</div>`}).join("");
+    return `<div class="qg" style="border-top-color:${g.col}"><h5 style="color:${g.col}">${g.h}</h5>${inner}</div>`;
+  }).join("");
+  $("#qrDots").innerHTML = QR.map((_,i)=>`<i class="${i?'':'on'}"></i>`).join("");
+  setDockPad();
+}
+$("#qrBody").addEventListener("scroll",()=>{ const b=$("#qrBody"); const w=b.children[0]?b.children[0].offsetWidth+10:1; const i=Math.round(b.scrollLeft/w); [...$("#qrDots").children].forEach((d,j)=>d.classList.toggle("on",j===i)); },{passive:true});
+function setDockPad(){ document.body.style.setProperty("--dockH", $("#qr").offsetHeight+"px"); }
+function setClosed(c){ $("#qr").classList.toggle("closed",c); $("#qrTog").textContent=c?"▴ Show":"▾ Hide"; store.set("qrClosed",c?"1":""); setDockPad(); }
+$("#qrTog").onclick=()=>setClosed(!$("#qr").classList.contains("closed"));
+window.addEventListener("resize",setDockPad);
+renderQR(); setClosed(!!store.get("qrClosed"));
+
+/* ---------------- floating menu ---------------- */
+function setMenu(open){
+  document.body.classList.toggle("menu-open",open);
+  $("#fab").setAttribute("aria-expanded",open); $("#menu").setAttribute("aria-hidden",!open);
+  $("#fab").setAttribute("aria-label",open?"Close section menu":"Open section menu");
+  if(open){ $("#menuQrLbl").textContent=$("#qr").classList.contains("closed")?"Show Quick Ref":"Hide Quick Ref"; }
+}
+$("#fab").onclick=()=>setMenu(!document.body.classList.contains("menu-open"));
+$("#menuBg").onclick=()=>setMenu(false);
+document.addEventListener("keydown",e=>{ if(e.key==="Escape") setMenu(false); });
+document.querySelectorAll("#menu a[data-s]").forEach(a=>a.addEventListener("click",e=>{
+  e.preventDefault(); setMenu(false);
+  const t=document.getElementById(a.dataset.s);
+  if(t){ const y=a.dataset.s==="top"?0:t.getBoundingClientRect().top+scrollY-64; scrollTo({top:y,behavior:"smooth"}); history.replaceState(null,"","#"+a.dataset.s); }
+}));
+$("#menuQr").onclick=()=>{ setClosed(!$("#qr").classList.contains("closed")); setMenu(false); };
+const io=new IntersectionObserver(es=>{ es.forEach(en=>{ if(en.isIntersecting){ document.querySelectorAll("#menu a[data-s]").forEach(a=>a.classList.toggle("cur",a.dataset.s===en.target.id)); } }); },{rootMargin:"-45% 0px -50% 0px"});
+[...document.querySelectorAll("#menu a[data-s]")].forEach(a=>{ const el=document.getElementById(a.dataset.s); if(el) io.observe(el); });
+
+/* ---------------- PWA ---------------- */
+if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
+  addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(()=>{}));
+}
+
+/* ---------------- motion ---------------- */
+(() => {
+  if (/[?&]still\b/.test(location.search)) document.documentElement.classList.add("still");
+  const calm = document.documentElement.classList.contains("still") || matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (calm || !("IntersectionObserver" in window)) return;
+
+  /* scroll reveal */
+  const SEL = ["section h2","section .panel","section .unit","section .stage","section .carry","section .rule","section .bp","section .board",
+    "section .augs > *","section .vid","#golden li","section ol.unlock > li","section .ranklist","section .note-s","section .buff","section .igrid"].join(",");
+  const waiting = new Set();
+  const show = (t, n) => { waiting.delete(t);
+    t.style.setProperty("--d", Math.min(n * 70, 350) + "ms"); t.classList.add("in");
+    const done = e => { if (e.target !== t || e.propertyName !== "transform") return; t.removeEventListener("transitionend", done);
+      if (!t.classList.contains("board") && !t.classList.contains("ranklist")) t.classList.remove("rv","in"); t.style.removeProperty("--d"); };
+    t.addEventListener("transitionend", done); };
+  let ticking = false;
+  const check = () => { ticking = false; let n = 0; const lim = innerHeight * .92;
+    waiting.forEach(t => { const r = t.getBoundingClientRect(); if (r.top < lim && r.bottom > 0) show(t, n++); else if (r.bottom <= 0) { t.classList.add("in"); waiting.delete(t); } }); };
+  const queue = () => { if (!ticking) { ticking = true; requestAnimationFrame(check); } };
+  addEventListener("scroll", queue, { passive: true }); addEventListener("resize", queue);
+  const rio = { observe: t => { waiting.add(t); queue(); } };
+  const tag = root => root.querySelectorAll(SEL).forEach(t => {
+    if (t.classList.contains("rv") || t.dataset.rvd) return; t.dataset.rvd = 1;
+    const r = t.getBoundingClientRect(); if (r.top < innerHeight * .9 && r.bottom > 0) { if (t.classList.contains("board")) { t.classList.add("rv"); requestAnimationFrame(() => t.classList.add("in")); } return; }
+    if (t.classList.contains("board")) t.querySelectorAll(".hex.u").forEach((h, i) => { h.parentElement.style.setProperty("--i", i); h.style.setProperty("--i", i); });
+    t.classList.add("rv"); rio.observe(t); });
+  document.querySelectorAll(".board").forEach(b => b.querySelectorAll(".hex.u").forEach((h, i) => h.parentElement.style.setProperty("--i", i)));
+  tag(document);
+  let pend = false;
+  new MutationObserver(() => { if (pend) return; pend = true; requestAnimationFrame(() => { pend = false; tag(document); }); })
+    .observe(document.querySelector("main") || document.body, { childList: true, subtree: true });
+
+  /* menu cascade */
+  document.querySelectorAll("#menu a").forEach((a, i) => a.style.setProperty("--i", i));
+
+  /* advisor: animate only rows that are new, bump changed counts */
+  const rowKey = r => { const x = r.querySelector(".hx"); if (x) return (r.classList.contains("opt") ? "o:" : "") + x.dataset.k + "|" + x.dataset.w;
+    const it = r.querySelector("[data-item]"); return (r.classList.contains("opt") ? "o:" : "") + (it ? it.dataset.item : r.textContent.slice(0, 30)) + "|" + r.textContent.length; };
+  let prevRows = new Set();
+  new MutationObserver(() => {
+    const rows = [...document.querySelectorAll("#builds .build")]; let i = 0; const now = new Set();
+    rows.forEach(r => { const k = rowKey(r); now.add(k); if (!prevRows.has(k)) { r.style.setProperty("--i", i++); r.classList.add("new"); } });
+    prevRows = now;
+  }).observe($("#builds"), { childList: true });
+  /* fade a row out before it is hidden */
+  $("#builds").addEventListener("click", e => { const h = e.target.closest("[data-h]"); if (!h || h.dataset.anim) return;
+    e.stopImmediatePropagation(); const row = h.closest(".hmenu").previousElementSibling; row && row.classList.add("out");
+    h.closest(".hmenu").classList.add("out"); setTimeout(() => { h.dataset.anim = 1; h.click(); }, 200); }, true);
+  let prevCnt = Object.fromEntries(CK.map(k => [k, String(bench[k])]));
+  new MutationObserver(() => { document.querySelectorAll("#bench .cbtn").forEach(c => { const k = c.querySelector("button").dataset.k, n = c.querySelector(".cnt").textContent;
+    if (prevCnt[k] != null && prevCnt[k] !== n) { c.querySelector(".cnt").classList.add("bump"); if (+n > +prevCnt[k]) c.classList.add("bump"); } prevCnt[k] = n; }); })
+    .observe($("#bench"), { childList: true });
+
+})();
+</script>
+</body>
+</html>
