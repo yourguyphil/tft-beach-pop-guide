@@ -143,6 +143,11 @@ nav.top a.l:hover{color:var(--text)}
 .carry .por{width:64px;height:64px;border-radius:12px;object-fit:cover;border:2px solid}
 .carry .who{min-width:110px}
 .carry .who b{display:block;font:800 16px Cinzel}
+.bucket .holds{display:flex;align-items:center;gap:12px;margin:10px 0}
+.bucket .hold{display:flex;flex-direction:column;align-items:center;gap:2px;text-align:center}
+.bucket .hold .por{width:56px;height:56px;border-radius:12px;object-fit:cover;border:2px solid}
+.bucket .hold b{font:800 14px Cinzel}
+.bucket .harr{font-size:22px;color:var(--gold);margin-bottom:28px}
 .recipes{display:flex;gap:10px;flex-wrap:wrap}
 .rec{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:11px;color:var(--muted);text-align:center;width:72px}
 .rec .eq{display:flex;align-items:center;gap:2px}
@@ -1231,17 +1236,16 @@ $("#tips").innerHTML = TIPS.map(([us,t])=>`<li><span class="ics">${us.map(uic).j
 $("#tl").innerHTML = TL.map(s=>`<div class="stage"><div class="st">${s.st}</div><h4>${s.h}</h4><ul>${s.li.map(l=>`<li>${l}</li>`).join("")}</ul><div class="row">${s.u.map(k=>unitIc(k,34)).join("")}</div></div>`).join("");
 
 /* ---------------- carries ---------------- */
-const carryHTML = list => list.map(c=>{const u=UK[c.u];return `
-  <div class="carry"><img class="por" src="${sq(c.u)}" alt="${u.n}" style="border-color:var(--c${u.c})">
-    <div style="flex:1"><div style="display:flex;gap:10px;align-items:baseline;flex-wrap:wrap"><b style="font:800 17px Cinzel">${u.n}</b>${costChip(u.c)}<span class="pill ${c.cls}">${c.tag}</span></div>
-    <div class="recipes" style="margin-top:8px">${c.items.map(recHTML).join("")}${c.bk?`<div class="bkrec"><span class="bkl">Backup</span>${recHTML(c.bk)}</div>`:""}</div></div></div>`}).join("");
+const holdPor = (k,lbl) => {const u=UK[k];return `<div class="hold"><img class="por" src="${sq(k)}" alt="${u.n}" style="border-color:var(--c${u.c})"><b>${u.n}</b><span class="small muted">${lbl}</span></div>`};
+const carryHTML = list => list.map(c=>`
+  <div class="carry bucket"><div style="flex:1">
+    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><span class="pill ${c.cls}">${c.tag}</span><span class="small muted">${c.note}</span></div>
+    <div class="holds">${holdPor(c.early,"early mule")}<span class="harr">→</span>${holdPor(c.late,"late game")}</div>
+    <div class="recipes">${c.items.map(recHTML).join("")}${c.bk?`<div class="bkrec"><span class="bkl">Backup</span>${recHTML(c.bk)}</div>`:""}</div></div></div>`).join("");
 $("#carries").innerHTML = carryHTML([
-  {u:"graves",tag:"AD carry · 2★ · preferred",cls:"p-teal",items:GRV,bk:"qss"},
-  {u:"taliyah",tag:"AP carry · late",cls:"p-red",items:TAL,bk:"morello"},
-  {u:"syndra",tag:"AP carry until Taliyah",cls:"p-red",items:SYN,bk:"shojin"},
-  {u:"zac",tag:"Tank · 2★",cls:"p-tank",items:ZAC,bk:"dclaw"},
-  {u:"ashe",tag:"Holds AD items early",cls:"",items:["bt","sterak"],bk:null},
-  {u:"annie",tag:"Holds tank parts early",cls:"p-tank",items:["gargoyle","warmog"],bk:null}
+  {tag:"AD carry",cls:"p-teal",early:"ashe",late:"graves",items:GRV,bk:"qss",note:"Ashe holds them until 2★ Graves"},
+  {tag:"AP carry",cls:"p-red",early:"syndra",late:"taliyah",items:TAL,bk:"morello",note:"Syndra holds them until Taliyah"},
+  {tag:"Tank",cls:"p-tank",early:"annie",late:"zac",items:ZAC,bk:"dclaw",note:"Annie holds them until Zac"}
 ]);
 
 /* ---------------- boards ---------------- */
