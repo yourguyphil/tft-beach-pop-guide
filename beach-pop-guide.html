@@ -1441,7 +1441,16 @@ const GOLD = [
     ["g-above",em("📊"),"<b>Be stronger than the lobby for half the game.</b> Reroll boards peak in stage 3; yours peaks at 4-2","survive stage 3 with 2★ Beach Pop units"],
     ["g-spike",em("⚡"),"<b>Hit your upgrades on the spike round and slam every item.</b> Upgrades with no items don't win","Lvl 8 roll-down, items on Graves right away"],
     ["g-streak",em("🔥"),"<b>Spent big? Win-streak it back. Weak? Lose all the way.</b> HP is gold",""],
-    ["g-cap",em("🎯"),"<b>Know your cap.</b> Behind → spend at 8 and steal fights. Ahead + rich → push 9","Illaoi at 9"]]}
+    ["g-cap",em("🎯"),"<b>Know your cap.</b> Behind → spend at 8 and steal fights. Ahead + rich → push 9","Illaoi at 9"]]},
+  {h:'🧑‍🏫 Fast 8 + tempo <span class="small muted">· Professor Blap</span>',list:[
+    ["g-tempo",em("📶"),"<b>Tempo = how fast the lobby gets stronger.</b> It jumps in steps: augments, PvE rounds, carousels, big roll-downs. The worst spot is the middle: win, loss, win, loss breaks your streak gold",""],
+    ["g-std",em("🗓️"),"<b>Standard tempo:</b> combat augment at 2-1 → Lvl 4, then 5 after carousel (econ augment → bank gold instead) · Lvl 6 at 3-2 with ~50 · Lvl 7 at 3-5 only if you keep 30+ · <b>Lvl 8 at 4-2 + roll</b> with ~30","6 at 3-2 and 8 at 4-2 match; 7 at 3-5 if you'd keep 30, else 4-1"],
+    ["g-30",em("🎰"),"<b>30 gold at Lvl 8 finds about 1 copy of each key unit, not upgrades.</b> You stabilize on the 2★ units you already have","2★ Beach Pop units from stage 3 hold the board until Graves + Zac hit 2★"],
+    ["g-board",em("🧮"),"<b>Your board counts as gold.</b> Lvl 7 + 30 gold with a 2★ 3-cost is far ahead of the same with no upgrades. Don't lose-streak into a board with no 2★s",""],
+    ["g-econ",em("💰"),"<b>Take an econ augment at 2-1</b> (XP over time is best). Missed it? Take one at 3-2. Ideal: econ → items → combat. Fast 8 wins by reaching Lvl 9 for upgraded 5-costs","Lvl 9 adds Illaoi"],
+    ["g-flex",icI("shojin")+icI("warmog"),"<b>Slam flexible items early:</b> Shojin (AD or AP casters), tank items with no back-line parts (Warmog's, Sunfire, Gargoyle). Only commit to a comp with an upgraded holder + a front line","Ashe / Syndra / Annie are your holders"],
+    ["g-core4",em("🧱"),"<b>Only 3–4 units are core</b> (the 4-cost tank + carry + their traits). Flex the rest around the upgrades you hit. A B-tier board you can hit beats an A-tier one you'd have to roll for","core = Graves + Zac + Taliyah + Beach Pop"],
+    ["g-fast",em("⏩"),"<b>Fast lobbies</b> (all-prismatic or extra-loot openers, higher ranks): greed less, avoid loss streaks, roll earlier, slam more. Greedy econ only works in low ranks",""]]}
 ];
 $("#grules").innerHTML = GOLD.map(g=>`<div><h3>${g.h}</h3><ul class="bul tight">${g.list.map(([id,ic,t,here])=>
   `<li id="${id}"><span class="ics">${ic}</span><span>${t}${here?`<span class="here">↳ Here: ${here}</span>`:""}</span></li>`).join("")}</ul></div>`).join("");

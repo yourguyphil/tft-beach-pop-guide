@@ -12,7 +12,7 @@ An illustrated playbook for **Beach Pop** as a **fast 8** comp in Teamfight Tact
 - **Quick reference:** rules, unlock path (Ashe → Syndra → Zac → Taliyah, each with earliest / aim / how / common mistake), instruments, Beach Pop breakpoints, units, stage plan + **checkpoints** at 3-2, 4-1, 4-2, 5-1, **When the plan breaks**, six final boards (stage 3 → Lvl 9) with instruments drawn on the board, computed trait counts and who's empowered, Item Cheat Sheet, Quick Ref dock
 - **Decision tools:** Item Advisor (main-carry toggle + **What am I missing?**), augments by stage (2-1 / 3-2 / 4-2) with take/avoid, positioning by matchup
 - **Learn + review:** shop odds + pool, copy finder (2★ or 3★ goal), instruments, contests, Beach Pop emblems, when to go Lvl 9, Top Cut mindset, **Match log** (localStorage, JSON/CSV export + import)
-- **Golden Rules** at the bottom: item, rolling and tempo advice from Frodan (TFT Academy), dpei and Ripple (TFT Academy), each tied to this comp
+- **Golden Rules** at the bottom: item, rolling and tempo advice from Frodan (TFT Academy), dpei, Ripple (TFT Academy) and Professor Blap (fast 8 + tempo), each tied to this comp
 
 ## Patch numbers + tests
 Patch-sensitive numbers (shop odds, pool sizes, Beach Pop instrument numbers, unlock counts, trait breakpoints) live in one `PATCH` object in `index.html`. Change them there; every section reads from it.
@@ -41,6 +41,7 @@ Checked Nov 22 2026:
 - **Openers, flex units (Swain, Illaoi, Aurora), Portable Forge, 679-game stats:** Blitz "Beach Pop Zac" (5.13 avg, 36% top 4: weaker than the Taliyah version)
 - **Alt items** (Graves Hand of Justice / Quicksilver, Taliyah Void Staff / Morello): TFT Academy "Beach Rock" (C tier, marked out of meta) and "Beach Spark" (B)
 - **Taliyah unlock** "1- to 5-cost on Beach Pop hexes": Mobalytics + MetaTFT wording
+- **Golden Rules · Fast 8 + tempo:** Professor Blap fundamentals videos on tempo and fast 8 (transcripts pasted by the user)
 
 **My heuristics, not sourced:** HP/gold lines in the checkpoints, instrument placement, positioning by matchup, augment take/avoid notes, Ashe/Annie as item holders.
 **Not published yet / my reading:** Syndra's exact unique-star-level count; that "Beach Pop hexes" means the hexes next to an instrument; what each instrument type does differently.
