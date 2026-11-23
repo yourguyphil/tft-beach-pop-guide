@@ -1,6 +1,6 @@
 // Auto-generated. Caches the whole site so it works offline once installed.
 const PREFIX = "tft-beach-pop-guide-";
-const CACHE = PREFIX + "1f2088c03f";
+const CACHE = PREFIX + "e9ff5c3ed0";
 const PRECACHE = [
 "./",
 "index.html",

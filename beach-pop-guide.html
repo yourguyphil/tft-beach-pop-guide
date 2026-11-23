@@ -155,6 +155,7 @@ nav.top a.l:hover{color:var(--text)}
 .rec .eq .ic{width:22px;height:22px;border-radius:5px}
 .alt{font-size:13px;color:var(--muted);margin-top:4px}
 .bkrec{position:relative;padding:12px 6px 4px;border:1px dashed var(--line);border-radius:10px;opacity:.85}
+.bkrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;padding:14px 8px 6px}
 .bkrec .bkl{position:absolute;top:-8px;left:50%;transform:translateX(-50%);padding:0 6px;background:var(--panel2);font:800 9.5px Inter;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);white-space:nowrap}
 
 /* hex board */
@@ -1014,7 +1015,7 @@ const I = {
   giantslayer:["Giant Slayer","madredsbloodrazor","sword","bow","","Bonus damage vs tanks."],
   gunblade:["Hextech Gunblade","hextechgunblade","sword","rod","","Heals the lowest ally from damage dealt."],
   shojin:["Spear of Shojin","spearofshojin","sword","tear","S","Attacks give bonus Mana. Taliyah core: more rock throws."],
-  eon:["Edge of Night","guardianangel","sword","vest","","At low HP: untargetable, cleanse, heal."],
+  eon:["Edge of Night","guardianangel","sword","vest","","At low HP: untargetable, cleanse, heal. Graves backup: survives the dive."],
   bt:["Bloodthirster","bloodthirster","sword","cloak","Z","Omnivamp + shield at low HP. Graves #1: he dashes into fights, so he needs to heal."],
   sterak:["Sterak's Gage","steraksgage","sword","belt","Z","AD + HP, big shield at 60% HP. Graves core."],
   ie:["Infinity Edge","infinityedge","sword","gloves","","AD + crit."],
@@ -1026,22 +1027,22 @@ const I = {
   nashor:["Nashor's Tooth","leviathan","bow","belt","","Attacks give bonus Mana."],
   lw:["Last Whisper","lastwhisper","bow","gloves","","Sunders Armor."],
   rabadon:["Rabadon's Deathcap","rabadonsdeathcap","rod","rod","S","Huge AP. Taliyah core."],
-  archangel:["Archangel's Staff","archangelsstaff","rod","tear","","AP that grows every few seconds."],
+  archangel:["Archangel's Staff","archangelsstaff","rod","tear","","AP that grows every few seconds. Taliyah backup for long fights."],
   crownguard:["Crownguard","crownguard","rod","vest","","Shield at combat start, then AP."],
-  ionic:["Ionic Spark","ionicspark","rod","cloak","","Shreds MR nearby; zaps enemy casters."],
+  ionic:["Ionic Spark","ionicspark","rod","cloak","","Shreds MR nearby; zaps enemy casters. Taliyah backup vs AP lobbies."],
   morello:["Morellonomicon","morellonomicon","rod","belt","S","Burn + Wound (anti-heal). Taliyah backup."],
   jg:["Jeweled Gauntlet","jeweledgauntlet","rod","gloves","S","AP + crit, abilities can crit. Syndra first, then Taliyah."],
   bluebuff:["Blue Buff","bluebuff","tear","tear","S","More AD and AP from all sources. Syndra's 3rd (tft.ninja board)."],
   vow:["Protector's Vow","frozenheart","tear","vest","","Mana + shield at low HP."],
   helm:["Adaptive Helm","adaptivehelm","tear","cloak","","More Mana from all sources."],
   visage:["Spirit Visage","spiritvisagerr","tear","belt","T","Regenerates missing HP. Zac core."],
-  hoj:["Hand of Justice","unstableconcoction","tear","gloves","Z","AD + AP + Omnivamp. Graves option (TFT Academy)."],
-  bramble:["Bramble Vest","bramblevest","vest","vest","T","Less damage from attacks. Zac vs AD."],
+  hoj:["Hand of Justice","unstableconcoction","tear","gloves","Z","AD + AP + Omnivamp. Graves backup (TFT Academy)."],
+  bramble:["Bramble Vest","bramblevest","vest","vest","T","Less damage from attacks. Zac backup vs AD."],
   gargoyle:["Gargoyle Stoneplate","gargoylestoneplate","vest","cloak","T","Armor + MR per enemy targeting it. Zac #1."],
   sunfire:["Sunfire Cape","redbuff","vest","belt","","Max HP + periodic Burn/Wound."],
   steadfast:["Steadfast Heart","nightharvester","vest","gloves","","Durability, more while healthy."],
   dclaw:["Dragon's Claw","dragonsclaw","cloak","cloak","T","Max HP + periodic healing. Zac backup."],
-  evenshroud:["Evenshroud","spectralgauntlet","cloak","belt","T","Sunders nearby enemies; early resists. Zac option (Mobalytics carousel)."],
+  evenshroud:["Evenshroud","spectralgauntlet","cloak","belt","T","Sunders nearby enemies; early resists. Zac backup (Mobalytics carousel)."],
   qss:["Quicksilver","quicksilver","cloak","gloves","Z","CC immunity + stacking AS. Graves backup (TFT Academy)."],
   warmog:["Warmog's Armor","warmogsarmor","belt","belt","T","Tons of max HP. Zac core: his cast heals from it."],
   flail:["Striker's Flail","powergauntlet","belt","gloves","","Crits give stacking Damage Amp."],
@@ -1252,11 +1253,12 @@ const carryHTML = list => list.map(c=>`
   <div class="carry bucket"><div style="flex:1">
     <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><span class="pill ${c.cls}">${c.tag}</span><span class="small muted">${c.note}</span></div>
     <div class="holds">${holdPor(c.early,"early mule")}<span class="harr">→</span>${holdPor(c.late,"late game")}</div>
-    <div class="recipes">${c.items.map(recHTML).join("")}${c.bk?`<div class="bkrec"><span class="bkl">Backup</span>${recHTML(c.bk)}</div>`:""}</div></div></div>`).join("");
+    <div class="recipes">${c.items.map(recHTML).join("")}</div>
+    ${c.bk.length?`<div class="bkrec bkrow"><span class="bkl">Backups</span>${c.bk.map(recHTML).join("")}</div>`:""}</div></div>`).join("");
 $("#carries").innerHTML = carryHTML([
-  {tag:"AD carry",cls:"p-teal",early:"ashe",late:"graves",items:GRV,bk:"qss",note:"Ashe holds them until 2★ Graves"},
-  {tag:"AP carry",cls:"p-red",early:"syndra",late:"taliyah",items:TAL,bk:"morello",note:"Syndra holds them until Taliyah"},
-  {tag:"Tank",cls:"p-tank",early:"annie",late:"zac",items:ZAC,bk:"dclaw",note:"Annie holds them until Zac"}
+  {tag:"AD carry",cls:"p-teal",early:"ashe",late:"graves",items:GRV,bk:["qss","hoj","eon"],note:"Ashe holds them until 2★ Graves"},
+  {tag:"AP carry",cls:"p-red",early:"syndra",late:"taliyah",items:TAL,bk:["morello","archangel","ionic"],note:"Syndra holds them until Taliyah"},
+  {tag:"Tank",cls:"p-tank",early:"annie",late:"zac",items:ZAC,bk:["dclaw","bramble","evenshroud"],note:"Annie holds them until Zac"}
 ]);
 
 /* ---------------- boards ---------------- */
